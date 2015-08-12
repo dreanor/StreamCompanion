@@ -1,0 +1,110 @@
+﻿<controls:MetroWindow x:Class="com.gmail.mikeundead.streamcompanion.app.ShellView"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      Icon="favicon.ico"
+                      IsEnabled="{Binding Path=IsEnabled, UpdateSourceTrigger=PropertyChanged}"
+                      WindowStartupLocation="CenterScreen"
+                      EnableDWMDropShadow="True"
+                      Width="1200"
+                      Height="600"
+                      Title="Stream Companion">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <controls:MetroWindow.WindowCommands>
+        <controls:WindowCommands>
+            <Button Content="Options" 
+                    ToolTip="Show Option menu"
+                    Command="{Binding Path=OpenOptionsCmd}"/>
+
+            <Button Content="Help" 
+                    ToolTip="Show Help menu"
+                    Command="{Binding Path=OpenHelpCmd}"/>
+        </controls:WindowCommands>
+    </controls:MetroWindow.WindowCommands>
+
+    <controls:MetroWindow.Flyouts>
+        <controls:FlyoutsControl>
+            <controls:Flyout Header="Options" Position="Right" Width="500" IsOpen="{Binding Path=AreOptionsVisible, UpdateSourceTrigger=PropertyChanged}">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Button Margin="0,5,0,0"
+                                    Content="Edit Stream templates"
+                                    Command="{Binding Path=EditStreamTemplatesCmd}"/>
+
+                            <Button Margin="0,5,0,0"
+                                    Content="Show Changelog"
+                                    Command="{Binding Path=ShowChangelogCmd}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:Flyout>
+            <controls:Flyout Header="Help" Position="Right" Width="500" IsOpen="{Binding Path=IsHelpVisible, UpdateSourceTrigger=PropertyChanged}">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Button Margin="0,5,0,0"
+                                    Content="Contact the Developer"
+                                    Command="{Binding Path=ContactCmd}"/>
+
+                            <Button Margin="0,5,0,0"
+                                    Content="Open Official Website"
+                                    Command="{Binding Path=OpenInBrowserCmd}"/>
+                            
+                            <Button Margin="0,5,0,0"
+                                    Content="Guide on how to use the Application"
+                                    Command="{Binding Path=HelpCmd}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:Flyout>
+        </controls:FlyoutsControl>
+    </controls:MetroWindow.Flyouts>
+
+    <controls:MetroContentControl>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TabControl Grid.Row="1"
+                        Padding="6"
+                        SelectedItem="{Binding Path=SelectedItem}"
+                        ItemsSource="{Binding Path=Steps, Mode=OneWay}">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Header, Mode=OneWay}"/>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <AdornerDecorator>
+                            <Grid>
+                                <ContentPresenter Content="{Binding Path=View}" />
+                            </Grid>
+                        </AdornerDecorator>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+        </Grid>
+    </controls:MetroContentControl>
+</controls:MetroWindow>

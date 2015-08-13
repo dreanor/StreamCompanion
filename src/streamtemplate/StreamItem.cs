@@ -1,15 +1,12 @@
 ﻿using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
 using helper.mvvm.baseclasses;
+using com.gmail.mikeundead.streamcompanion.contract;
+using Newtonsoft.Json;
 
 namespace com.gmail.mikeundead.streamcompanion.streamtemplate
 {
-    using com.gmail.mikeundead.streamcompanion.contract;
-
-    using Newtonsoft.Json;
-
     public class StreamItem : ViewModelBase<IStreamItem>, IStreamItem
     {
-
         public StreamItem(string website, string whitespaceReplacement)
         {
             this.Website = website;

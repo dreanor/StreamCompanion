@@ -50,27 +50,27 @@ namespace com.gmail.mikeundead.streamcompanion.uic
             this.SetupExistingHooks();
         }
 
-        public ICommand AddSerieCmd { get; private set; }
+        public ActionCommand AddSerieCmd { get; private set; }
 
-        public ICommand EditSerieCmd { get; private set; }
+        public ActionCommand EditSerieCmd { get; private set; }
 
-        public ICommand ForceReloadStreamCmd { get; private set; }
+        public ActionCommand ForceReloadStreamCmd { get; private set; }
 
-        public ICommand SetAsCurrentlyWatchingCmd { get; private set; }
+        public ActionCommand SetAsCurrentlyWatchingCmd { get; private set; }
 
-        public ICommand SetAsCompletedCmd { get; private set; }
+        public ActionCommand SetAsCompletedCmd { get; private set; }
 
-        public ICommand SetAsOnHoldCmd { get; private set; }
+        public ActionCommand SetAsOnHoldCmd { get; private set; }
 
-        public ICommand SetAsDroppedCmd { get; private set; }
+        public ActionCommand SetAsDroppedCmd { get; private set; }
 
-        public ICommand SetAsPlanToWatchCmd { get; private set; }
+        public ActionCommand SetAsPlanToWatchCmd { get; private set; }
 
-        public ICommand IncreaseEpisodeCmd { get; private set; }
+        public ActionCommand IncreaseEpisodeCmd { get; private set; }
 
-        public ICommand DoneCmd { get; private set; }
+        public ActionCommand DoneCmd { get; private set; }
 
-        public ICommand CancelCmd { get; private set; }
+        public ActionCommand CancelCmd { get; private set; }
 
         public ISerie SelectedItem
         {

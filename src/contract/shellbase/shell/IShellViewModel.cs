@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt;
+using helper.mvvm.commands;
 
 namespace com.gmail.mikeundead.streamcompanion.contract.shellbase.shell
 {
@@ -11,19 +12,19 @@ namespace com.gmail.mikeundead.streamcompanion.contract.shellbase.shell
 
         IStepUIC SelectedItem { get; set; }
 
-        ICommand OpenInBrowserCmd { get; }
+        ActionCommand OpenInBrowserCmd { get; }
 
-        ICommand EditStreamTemplatesCmd { get; }
+        ActionCommand EditStreamTemplatesCmd { get; }
 
-        ICommand ShowChangelogCmd { get; }
+        ActionCommand ShowChangelogCmd { get; }
 
-        ICommand ContactCmd { get; }
+        ActionCommand ContactCmd { get; }
 
-        ICommand HelpCmd { get; }
+        ActionCommand HelpCmd { get; }
 
-        ICommand OpenOptionsCmd { get; }
+        ActionCommand OpenOptionsCmd { get; }
 
-        ICommand OpenHelpCmd { get; }
+        ActionCommand OpenHelpCmd { get; }
 
         bool AreOptionsVisible { get; }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using helper.mvvm.commands;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -10,19 +11,19 @@ namespace com.gmail.mikeundead.streamcompanion.contract.streamtemplate
 
         IStreamItem SelectedItem { get; set; }
 
-        ICommand SaveAndExitCmd { get; }
+        ActionCommand SaveAndExitCmd { get; }
 
-        ICommand AddStreamWebsiteCmd { get; }
+        ActionCommand AddStreamWebsiteCmd { get; }
 
-        ICommand EditStreamWebsiteCmd { get; }
+        ActionCommand EditStreamWebsiteCmd { get; }
 
-        ICommand MoveUpCmd { get; }
+        ActionCommand MoveUpCmd { get; }
 
-        ICommand MoveDownCmd { get; }
+        ActionCommand MoveDownCmd { get; }
 
-        ICommand DoneCmd{ get; }
+        ActionCommand DoneCmd { get; }
 
-        ICommand CancelCmd { get; }
+        ActionCommand CancelCmd { get; }
 
         bool IsDone { get; }
 

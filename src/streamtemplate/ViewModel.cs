@@ -47,19 +47,19 @@ namespace com.gmail.mikeundead.streamcompanion.streamtemplate
             set { this.Set(x => x.SelectedItem, value); }
         }
 
-        public ICommand SaveAndExitCmd { get; private set; }
+        public ActionCommand SaveAndExitCmd { get; private set; }
 
-        public ICommand AddStreamWebsiteCmd { get; private set; }
+        public ActionCommand AddStreamWebsiteCmd { get; private set; }
 
-        public ICommand EditStreamWebsiteCmd { get; private set; }
+        public ActionCommand EditStreamWebsiteCmd { get; private set; }
 
-        public ICommand MoveUpCmd { get; private set; }
+        public ActionCommand MoveUpCmd { get; private set; }
 
-        public ICommand MoveDownCmd { get; private set; }
+        public ActionCommand MoveDownCmd { get; private set; }
 
-        public ICommand DoneCmd { get; private set; }
+        public ActionCommand DoneCmd { get; private set; }
 
-        public ICommand CancelCmd { get; private set; }
+        public ActionCommand CancelCmd { get; private set; }
 
         public bool IsDone
         {

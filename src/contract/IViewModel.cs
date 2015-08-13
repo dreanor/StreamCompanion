@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using helper.mvvm.commands;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -6,25 +7,25 @@ namespace com.gmail.mikeundead.streamcompanion.contract
 {
     public interface IViewModel : INotifyPropertyChanged
     {
-        ICommand AddSerieCmd { get; }
+        ActionCommand AddSerieCmd { get; }
 
-        ICommand EditSerieCmd { get; }
+        ActionCommand EditSerieCmd { get; }
 
-        ICommand ForceReloadStreamCmd { get; }
+        ActionCommand ForceReloadStreamCmd { get; }
 
-        ICommand SetAsCurrentlyWatchingCmd { get; }
+        ActionCommand SetAsCurrentlyWatchingCmd { get; }
 
-        ICommand SetAsCompletedCmd { get; }
+        ActionCommand SetAsCompletedCmd { get; }
 
-        ICommand SetAsOnHoldCmd { get; }
+        ActionCommand SetAsOnHoldCmd { get; }
 
-        ICommand SetAsDroppedCmd { get; }
+        ActionCommand SetAsDroppedCmd { get; }
 
-        ICommand SetAsPlanToWatchCmd { get; }
+        ActionCommand SetAsPlanToWatchCmd { get; }
 
-        ICommand DoneCmd { get; }
+        ActionCommand DoneCmd { get; }
 
-        ICommand CancelCmd { get; }
+        ActionCommand CancelCmd { get; }
 
         ISerie SelectedItem { get; set; }
 

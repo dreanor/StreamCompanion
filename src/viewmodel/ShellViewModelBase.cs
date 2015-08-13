@@ -44,19 +44,19 @@ namespace com.gmail.mikeundead.streamcompanion.shellviewmodel
             set { this.Set(x => x.SelectedItem, value); }
         }
 
-        public ICommand OpenInBrowserCmd { get; private set; }
+        public ActionCommand OpenInBrowserCmd { get; private set; }
 
-        public ICommand EditStreamTemplatesCmd { get; private set; }
+        public ActionCommand EditStreamTemplatesCmd { get; private set; }
 
-        public ICommand HelpCmd { get; private set; }
+        public ActionCommand HelpCmd { get; private set; }
 
-        public ICommand ShowChangelogCmd { get; private set; }
-        
-        public ICommand ContactCmd { get; private set; }
+        public ActionCommand ShowChangelogCmd { get; private set; }
 
-        public ICommand OpenOptionsCmd { get; private set; }
+        public ActionCommand ContactCmd { get; private set; }
 
-        public ICommand OpenHelpCmd { get; private set; }
+        public ActionCommand OpenOptionsCmd { get; private set; }
+
+        public ActionCommand OpenHelpCmd { get; private set; }
 
         public bool AreOptionsVisible
         {

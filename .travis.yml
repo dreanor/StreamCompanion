@@ -1,0 +1,8 @@
+language: csharp
+solution: src/StreamCompanion.sln
+install:
+  - nuget restore src/StreamCompanion.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release src/StreamCompanion.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./src/test/bin/Release/test.dll

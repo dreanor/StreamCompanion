@@ -6,7 +6,6 @@ using com.gmail.mikeundead.streamcompanion.contract.shellbase.shell;
 using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt;
 using com.gmail.mikeundead.streamcompanion.streamtemplate;
 using helper.mvvm.baseclasses;
-using helper.mvvm.commands;
 
 namespace com.gmail.mikeundead.streamcompanion.shellviewmodel
 {

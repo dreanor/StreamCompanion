@@ -3,7 +3,6 @@ using System.Linq;
 using com.gmail.mikeundead.streamcompanion.contract;
 using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
 using helper.mvvm.baseclasses;
-using helper.mvvm.commands;
 using IViewModel = com.gmail.mikeundead.streamcompanion.contract.streamtemplate.IViewModel;
 
 namespace com.gmail.mikeundead.streamcompanion.streamtemplate

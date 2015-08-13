@@ -8,7 +8,6 @@ using com.gmail.mikeundead.streamcompanion.contract;
 using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
 using com.gmail.mikeundead.streamcompanion.itemviewmodel;
 using helper.mvvm.baseclasses;
-using helper.mvvm.commands;
 
 namespace com.gmail.mikeundead.streamcompanion.uic
 {

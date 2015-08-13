@@ -1,6 +1,5 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
 using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt;
 using helper.mvvm.commands;
 

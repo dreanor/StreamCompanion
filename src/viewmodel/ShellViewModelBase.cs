@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Windows.Input;
 using com.gmail.mikeundead.streamcompanion.contract;
 using com.gmail.mikeundead.streamcompanion.contract.shellbase.shell;
 using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt;

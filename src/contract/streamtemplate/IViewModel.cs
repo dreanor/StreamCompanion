@@ -1,7 +1,6 @@
 ﻿using helper.mvvm.commands;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
 
 namespace com.gmail.mikeundead.streamcompanion.contract.streamtemplate
 {

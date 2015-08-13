@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows.Input;
 using com.gmail.mikeundead.streamcompanion.contract;
 using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
 using helper.mvvm.baseclasses;

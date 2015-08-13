@@ -1,5 +1,7 @@
 language: csharp
 solution: src/StreamCompanion.sln
+mono:
+  - latest
 install:
   - nuget restore src/StreamCompanion.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner

@@ -1,4 +1,4 @@
-﻿namespace com.gmail.mikeundead.streamcompanion.contract.shellbase.uic
+﻿namespace StreamCompanion.Contract.ShellBase.Uic
 {
     public interface IUICView
     {

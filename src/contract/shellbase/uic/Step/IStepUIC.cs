@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt
+namespace StreamCompanion.Contract.ShellBase.Uic.Step
 {
     public interface IStepUIC : INotifyPropertyChanged
     {

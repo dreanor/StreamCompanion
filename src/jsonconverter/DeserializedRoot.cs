@@ -1,10 +1,10 @@
-﻿using System;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.Json.Deserialize;
+using StreamCompanion.ItemViewModel;
+using System;
 using System.Collections.Generic;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.json.deserialize;
-using com.gmail.mikeundead.streamcompanion.itemviewmodel;
 
-namespace com.gmail.mikeundead.streamcompanion.jsonconverter
+namespace StreamCompanion.JsonConverter
 {
     public class DeserializedRoot : IDeserializedRoot
     {

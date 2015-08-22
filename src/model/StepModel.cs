@@ -1,7 +1,7 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
+﻿using StreamCompanion.Contract.ShellBase.Model;
 using helper.utils.baseclasses;
 
-namespace com.gmail.mikeundead.streamcompanion.model
+namespace StreamCompanion.Model
 {
     public class StepModel : NotifyPropertyChangedBase<IStepModel>, IStepModel
     {

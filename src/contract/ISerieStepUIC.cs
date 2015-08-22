@@ -1,6 +1,6 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt;
+﻿using StreamCompanion.Contract.ShellBase.Uic.Step;
 
-namespace com.gmail.mikeundead.streamcompanion.contract
+namespace StreamCompanion.Contract
 {
     public interface ISerieStepUIC : IStepUIC
     {

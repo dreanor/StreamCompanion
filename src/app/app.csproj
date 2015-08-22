@@ -8,7 +8,7 @@
     <ProjectGuid>{9FA5AD62-5A75-41FC-940F-68B258284F2E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.gmail.mikeundead.streamcompanion.app</RootNamespace>
+    <RootNamespace>Streamcompanion.App</RootNamespace>
     <AssemblyName>Stream Companion</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -16,10 +16,10 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>..\..\dropboxrelease\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -27,15 +27,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://dl.dropboxusercontent.com/u/24979157/deployment/streamcompanion/development/</InstallUrl>
-    <UpdateUrl>https://dl.dropboxusercontent.com/u/24979157/deployment/streamcompanion/development/</UpdateUrl>
-    <SupportUrl>https://dl.dropboxusercontent.com/u/24979157/development/streamcompanion/index.html</SupportUrl>
     <ProductName>Stream Companion</ProductName>
     <PublisherName>Stream Companion</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.5.5</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -46,7 +43,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\release\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -56,7 +53,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -72,7 +69,7 @@
     <ManifestKeyFile>app_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -85,35 +82,24 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="DropNet">
-      <HintPath>..\..\lib\DropNet\DropNet.dll</HintPath>
-    </Reference>
     <Reference Include="helper.dialog">
       <HintPath>..\..\lib\Helper\helper.dialog.dll</HintPath>
     </Reference>
-    <Reference Include="helper.filehelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="helper.filehelper">
       <HintPath>..\..\lib\Helper\helper.filehelper.dll</HintPath>
     </Reference>
-    <Reference Include="helper.mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="helper.mvvm">
       <HintPath>..\..\lib\Helper\helper.mvvm.dll</HintPath>
     </Reference>
-    <Reference Include="helper.utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="helper.utils">
       <HintPath>..\..\lib\Helper\helper.utils.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=0.13.1.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\mahapps\MahApps.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\DropNet\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -163,25 +149,25 @@
     <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\contract\contract.csproj">
-      <Project>{458D67F5-7079-45FD-9FFC-6C7B543E4235}</Project>
-      <Name>contract</Name>
+    <ProjectReference Include="..\contract\Contract.csproj">
+      <Project>{458d67f5-7079-45fd-9ffc-6c7b543e4235}</Project>
+      <Name>Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\controller\controller.csproj">
-      <Project>{20AFB920-F93E-4467-AFA7-248C8E801D11}</Project>
-      <Name>controller</Name>
+    <ProjectReference Include="..\controller\Controller.csproj">
+      <Project>{20afb920-f93e-4467-afa7-248c8e801d11}</Project>
+      <Name>Controller</Name>
     </ProjectReference>
-    <ProjectReference Include="..\model\model.csproj">
+    <ProjectReference Include="..\model\Model.csproj">
       <Project>{D459A62A-5390-40D5-A188-C524630B5145}</Project>
-      <Name>model</Name>
+      <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\uic\uic.csproj">
-      <Project>{92D01EC1-F123-4BA5-B527-E97AEBD55A87}</Project>
-      <Name>uic</Name>
+    <ProjectReference Include="..\uic\Uic.csproj">
+      <Project>{92d01ec1-f123-4ba5-b527-e97aebd55a87}</Project>
+      <Name>Uic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\viewmodel\shellviewmodel.csproj">
-      <Project>{E75F2BEF-F5DD-4A54-9930-2AF27C913540}</Project>
-      <Name>shellviewmodel</Name>
+    <ProjectReference Include="..\viewmodel\ShellViewModel.csproj">
+      <Project>{e75f2bef-f5dd-4a54-9930-2af27c913540}</Project>
+      <Name>ShellViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -211,10 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Properties\app.manifest" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.Json.Serialize;
+using System;
 using System.Collections.Generic;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.json.serialize;
 
-namespace com.gmail.mikeundead.streamcompanion.jsonconverter
+namespace StreamCompanion.JsonConverter
 {
     public class SerializedRoot : ISerializedRoot
     {

@@ -1,9 +1,9 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.StreamTemplate;
 using helper.mvvm.baseclasses;
-using com.gmail.mikeundead.streamcompanion.contract;
 using Newtonsoft.Json;
 
-namespace com.gmail.mikeundead.streamcompanion.streamtemplate
+namespace StreamCompanion.StreamTemplate
 {
     public class StreamItem : ViewModelBase<IStreamItem>, IStreamItem
     {

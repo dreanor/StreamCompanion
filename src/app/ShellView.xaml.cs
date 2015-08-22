@@ -1,7 +1,9 @@
-﻿using System.Deployment.Application;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.shell;
+﻿using StreamCompanion.Contract.ShellBase.Shell;
+using System.Deployment.Application;
+using System.Reflection;
+using System.Windows.Forms;
 
-namespace com.gmail.mikeundead.streamcompanion.app
+namespace StreamCompanion.App
 {
     public partial class ShellView : IShellView
     {
@@ -9,12 +11,7 @@ namespace com.gmail.mikeundead.streamcompanion.app
         {
             InitializeComponent();
             this.DataContext = viewModel;
-
-            if (ApplicationDeployment.IsNetworkDeployed)
-            {
-                var version = ApplicationDeployment.CurrentDeployment.CurrentVersion;
-                this.Title = string.Format("{0} - {1}.{2}.{3}.{4} (dev)", this.Title, version.Major, version.Minor, version.Build, version.Revision);
-            }
+            this.Title = string.Format("{0} - {1}", this.Title,  Application.ProductVersion);
         }
     }
 }

@@ -1,8 +1,8 @@
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic;
+using StreamCompanion.Contract;
+using StreamCompanion.Contract.ShellBase.Uic;
 using helper.utils.baseclasses;
 
-namespace com.gmail.mikeundead.streamcompanion.uic
+namespace StreamCompanion.Uic
 {
     public class Step : NotifyPropertyChangedBase<ISerieStepUIC>, ISerieStepUIC
     {

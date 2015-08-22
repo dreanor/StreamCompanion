@@ -1,8 +1,8 @@
-﻿using System;
+﻿using helper.mvvm.commands;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace com.gmail.mikeundead.streamcompanion.contract
+namespace StreamCompanion.Contract
 {
     public interface IViewModel : INotifyPropertyChanged
     {

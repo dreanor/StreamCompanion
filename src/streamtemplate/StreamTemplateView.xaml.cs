@@ -1,6 +1,6 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
+﻿using StreamCompanion.Contract.StreamTemplate;
 
-namespace com.gmail.mikeundead.streamcompanion.streamtemplate
+namespace StreamCompanion.StreamTemplate
 {
     public partial class StreamTemplateView
     {

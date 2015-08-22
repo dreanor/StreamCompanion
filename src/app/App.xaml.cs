@@ -1,23 +1,20 @@
-﻿using System.Windows;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.shell;
-using com.gmail.mikeundead.streamcompanion.controller;
-using com.gmail.mikeundead.streamcompanion.model;
-using com.gmail.mikeundead.streamcompanion.shellviewmodel;
-using com.gmail.mikeundead.streamcompanion.uic;
-using DropNet;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.ShellBase.Model;
+using StreamCompanion.Contract.ShellBase.Shell;
+using StreamCompanion.Controller;
+using StreamCompanion.Model;
+using StreamCompanion.ShellViewModel;
+using StreamCompanion.Uic;
+using System.Windows;
 
-namespace com.gmail.mikeundead.streamcompanion.app
+namespace StreamCompanion.App
 {
     public partial class App
     {
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
-            var dropNet = new DropNetClient("hidden kappa", "hidden kappa", "hidden kappa", "hidden kappa");
-
             IStepModel stepModel = new StepModel();
-            IController controller = new Controller(stepModel, dropNet);
+            IController controller = new MainController(stepModel);
 
             ISerieStepUIC currentlyWatching = new Step("Currently Watching", new View(new ViewModel(stepModel, stepModel.CurrentlyWatching, controller)));
             ISerieStepUIC completed = new Step("Completed", new View(new ViewModel(stepModel, stepModel.Completed, controller)));
@@ -25,7 +22,7 @@ namespace com.gmail.mikeundead.streamcompanion.app
             ISerieStepUIC dropped = new Step("Dropped", new View(new ViewModel(stepModel, stepModel.Dropped, controller)));
             ISerieStepUIC planToWatch = new Step("Plan To Watch", new View(new ViewModel(stepModel, stepModel.PlanToWatch, controller)));
 
-            IShellViewModel shellViewmodel = new ShellViewModel(controller, currentlyWatching, completed, onHold, dropped, planToWatch);
+            IShellViewModel shellViewmodel = new MainShellViewModel(controller, currentlyWatching, completed, onHold, dropped, planToWatch);
             var shellView = new ShellView(shellViewmodel);
             shellView.Show();
         }

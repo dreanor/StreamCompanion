@@ -1,13 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.shell;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic.schritt;
-using com.gmail.mikeundead.streamcompanion.streamtemplate;
+using StreamCompanion.Contract;
+using StreamCompanion.Contract.ShellBase.Shell;
+using StreamCompanion.Contract.ShellBase.Uic.Step;
+using StreamCompanion.StreamTemplate;
 using helper.mvvm.baseclasses;
+using helper.mvvm.commands;
 
-namespace com.gmail.mikeundead.streamcompanion.shellviewmodel
+namespace StreamCompanion.ShellViewModel
 {
     public abstract class ShellViewModelBase : ViewModelBase<IShellViewModel>, IShellViewModel
     {
@@ -21,12 +22,12 @@ namespace com.gmail.mikeundead.streamcompanion.shellviewmodel
             this.Steps = new ObservableCollection<IStepUIC>(stepUics);
             this.SelectedItem = this.Steps[0];
 
-            this.OpenInBrowserCmd = new ActionCommand(() => Process.Start("https://dl.dropboxusercontent.com/u/24979157/development/streamcompanion/index.html"));
+            this.OpenInBrowserCmd = new ActionCommand(() => Process.Start("https://dreanor.github.io/StreamCompanion/"));
             this.EditStreamTemplatesCmd = new ActionCommand(this.EditStreamTemplates);
             this.ContactCmd = new ActionCommand(() => Process.Start("mailto:mikeundead@gmail.com"));
             this.OpenOptionsCmd = new ActionCommand(() => { this.AreOptionsVisible = true; this.IsHelpVisible = false; });
             this.OpenHelpCmd = new ActionCommand(() => { this.AreOptionsVisible = false; this.IsHelpVisible = true; });
-            this.HelpCmd = new ActionCommand(() => Process.Start("https://bitbucket.org/Dreanor/stream-companion/wiki/How%20to%20use"));
+            this.HelpCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki/How-to-use"));
             this.ShowChangelogCmd = new ActionCommand(() => Process.Start(controller.ChangelogPath));
         }
 

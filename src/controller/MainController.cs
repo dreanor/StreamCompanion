@@ -1,41 +1,35 @@
-﻿using System;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.Json;
+using StreamCompanion.Contract.Json.Deserialize;
+using StreamCompanion.Contract.ShellBase.Model;
+using StreamCompanion.Contract.StreamTemplate;
+using StreamCompanion.JsonConverter;
+using StreamCompanion.StreamTemplate;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Net.NetworkInformation;
 using System.Threading;
 using System.Threading.Tasks;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.json;
-using com.gmail.mikeundead.streamcompanion.contract.json.deserialize;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
-using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
-using com.gmail.mikeundead.streamcompanion.jsonconverter;
-using com.gmail.mikeundead.streamcompanion.streamtemplate;
-using DropNet;
-using IModel = com.gmail.mikeundead.streamcompanion.contract.streamtemplate.IModel;
-using System.Reflection;
+using IModel = StreamCompanion.Contract.StreamTemplate.IModel;
 
-namespace com.gmail.mikeundead.streamcompanion.controller
+namespace StreamCompanion.Controller
 {
-    public class Controller : IController
+    public class MainController : IController
     {
         private readonly IConverter converter;
         private readonly IStepModel stepModel;
         private readonly IStreamManager streamManager;
         private readonly SemaphoreSlim semaphoreSlim;
         private List<IStreamItem> cachedStreams;
-        private readonly DropNetClient dropNetClient;
         private string streamTemplatePath;
         private string folderPath;
         private string rootPath;
         private string dataPath;
         private Guid userId;
 
-        public Controller(IStepModel stepModel, DropNetClient dropNetClient)
+        public MainController(IStepModel stepModel)
         {
             this.converter = new Converter();
-            this.dropNetClient = dropNetClient;
             this.streamManager = new StreamManager();
             this.stepModel = stepModel;
             this.rootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion"); 
@@ -66,12 +60,6 @@ namespace com.gmail.mikeundead.streamcompanion.controller
         {
             this.converter.ExportStreams(model, this.streamTemplatePath);
             this.cachedStreams = model.Streams;
-
-            //todo remove after research phase
-            if (NetworkInterface.GetIsNetworkAvailable())
-            {
-                Task.Factory.StartNew(() => DropBoxHandler.Upload(this.userId, this.dropNetClient));
-            }
         }
 
         public IEnumerable<IStreamItem> LoadStreamTemplates()
@@ -102,7 +90,7 @@ namespace com.gmail.mikeundead.streamcompanion.controller
         private void CopyChangelog()
         {
             const string changelog = "changelog.txt";
-            using (var resource = GetType().Assembly.GetManifestResourceStream("com.gmail.mikeundead.streamcompanion.controller.changelog.txt"))
+            using (var resource = GetType().Assembly.GetManifestResourceStream("StreamCompanion.Controller.changelog.txt"))
             {
                 if (resource == null)
                 {

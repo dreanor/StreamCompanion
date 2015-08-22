@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace com.gmail.mikeundead.streamcompanion.contract.streamtemplate
+namespace StreamCompanion.Contract.StreamTemplate
 {
     public interface IViewModel : INotifyPropertyChanged
     {

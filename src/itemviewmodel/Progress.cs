@@ -1,7 +1,7 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract;
+﻿using StreamCompanion.Contract;
 using helper.mvvm.baseclasses;
 
-namespace com.gmail.mikeundead.streamcompanion.itemviewmodel
+namespace StreamCompanion.ItemViewModel
 {
 	public class Progress : ViewModelBase<IProgress>, IProgress
 	{

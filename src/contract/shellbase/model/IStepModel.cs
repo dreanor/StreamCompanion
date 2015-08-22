@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace com.gmail.mikeundead.streamcompanion.contract.shellbase.model
+namespace StreamCompanion.Contract.ShellBase.Model
 {
     public interface IStepModel : INotifyPropertyChanged
     {

@@ -1,4 +1,4 @@
-namespace com.gmail.mikeundead.streamcompanion.contract.shellbase.shell
+namespace StreamCompanion.Contract.ShellBase.Shell
 {
     public interface IShellView
     {

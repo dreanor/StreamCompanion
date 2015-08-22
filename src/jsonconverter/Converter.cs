@@ -1,9 +1,9 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.json;
-using com.gmail.mikeundead.streamcompanion.contract.json.deserialize;
-using com.gmail.mikeundead.streamcompanion.contract.json.serialize;
-using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
-using com.gmail.mikeundead.streamcompanion.streamtemplate;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.Json;
+using StreamCompanion.Contract.Json.Deserialize;
+using StreamCompanion.Contract.Json.Serialize;
+using StreamCompanion.Contract.StreamTemplate;
+using StreamCompanion.StreamTemplate;
 using helper.filehelper;
 using Newtonsoft.Json;
 using System;
@@ -12,7 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace com.gmail.mikeundead.streamcompanion.jsonconverter
+namespace StreamCompanion.JsonConverter
 {
     public class Converter : IConverter
     {

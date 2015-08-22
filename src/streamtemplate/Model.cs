@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
+﻿using StreamCompanion.Contract.StreamTemplate;
+using System.Collections.Generic;
 
-namespace com.gmail.mikeundead.streamcompanion.streamtemplate
+namespace StreamCompanion.StreamTemplate
 {
     public class Model : IModel
     {

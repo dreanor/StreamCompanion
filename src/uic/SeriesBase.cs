@@ -1,15 +1,16 @@
-﻿using System;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.ShellBase.Model;
+using StreamCompanion.ItemViewModel;
+using helper.mvvm.baseclasses;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
-using com.gmail.mikeundead.streamcompanion.itemviewmodel;
-using helper.mvvm.baseclasses;
+using helper.mvvm.commands;
 
-namespace com.gmail.mikeundead.streamcompanion.uic
+namespace StreamCompanion.Uic
 {
     public class SeriesBase : ViewModelBase<IViewModel, IModel>, IViewModel
     {

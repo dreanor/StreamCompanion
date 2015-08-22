@@ -1,8 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using Newtonsoft.Json;
 
-namespace com.gmail.mikeundead.streamcompanion.contract
+namespace StreamCompanion.Contract
 {
     public interface ISerie : INotifyPropertyChanged
     {

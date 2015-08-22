@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.StreamTemplate;
+using System.Collections.Generic;
 using System.Net;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
-using System;
 
-namespace com.gmail.mikeundead.streamcompanion.controller
+namespace StreamCompanion.Controller
 {
     public class StreamManager : IStreamManager
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace com.gmail.mikeundead.streamcompanion.contract.streamtemplate
+namespace StreamCompanion.Contract.StreamTemplate
 {
     public interface IModel
     {

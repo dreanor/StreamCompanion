@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace com.gmail.mikeundead.streamcompanion.contract.json.deserialize
+namespace StreamCompanion.Contract.Json.Deserialize
 {
     public interface IDeserializedRoot
     {

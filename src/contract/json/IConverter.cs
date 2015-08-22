@@ -1,10 +1,10 @@
-﻿using System;
+﻿using StreamCompanion.Contract.Json.Deserialize;
+using StreamCompanion.Contract.Json.Serialize;
+using StreamCompanion.Contract.StreamTemplate;
+using System;
 using System.Collections.Generic;
-using com.gmail.mikeundead.streamcompanion.contract.json.deserialize;
-using com.gmail.mikeundead.streamcompanion.contract.json.serialize;
-using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
 
-namespace com.gmail.mikeundead.streamcompanion.contract.json
+namespace StreamCompanion.Contract.Json
 {
     public interface IConverter
     {

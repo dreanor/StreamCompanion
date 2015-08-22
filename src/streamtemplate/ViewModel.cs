@@ -1,13 +1,14 @@
-﻿using System.Collections.ObjectModel;
-using System.Linq;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.streamtemplate;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.StreamTemplate;
 using helper.mvvm.baseclasses;
-using IViewModel = com.gmail.mikeundead.streamcompanion.contract.streamtemplate.IViewModel;
+using System.Collections.ObjectModel;
+using System.Linq;
+using IViewModel = StreamCompanion.Contract.StreamTemplate.IViewModel;
 
-namespace com.gmail.mikeundead.streamcompanion.streamtemplate
+namespace StreamCompanion.StreamTemplate
 {
     using System;
+    using helper.mvvm.commands;
 
     public class ViewModel : ViewModelBase<IViewModel>, IViewModel
     {

@@ -1,9 +1,9 @@
-﻿using System.Diagnostics;
+﻿using StreamCompanion.Contract;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
-using com.gmail.mikeundead.streamcompanion.contract;
 
-namespace com.gmail.mikeundead.streamcompanion.uic
+namespace StreamCompanion.Uic
 {
     public partial class View : IView
     {

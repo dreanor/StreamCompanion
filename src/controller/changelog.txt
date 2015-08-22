@@ -1,10 +1,11 @@
-1.0.5.x
+1.0.6
+- Moved Project to GitHub
+
+1.0.5
 - Remodeled Status bar
 - Added Help menu
 - Added Tutorial on how to use
 - Grammar correction
-
-1.0.5
 - Added deployment of Changelog
 - Updated Visuals
 - Updated width and height of UI

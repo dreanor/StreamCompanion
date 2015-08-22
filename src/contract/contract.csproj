@@ -8,8 +8,8 @@
     <ProjectGuid>{458D67F5-7079-45FD-9FFC-6C7B543E4235}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.gmail.mikeundead.streamcompanion.contract</RootNamespace>
-    <AssemblyName>com.gmail.mikeundead.streamcompanion.contract</AssemblyName>
+    <RootNamespace>StreamCompanion.Contract</RootNamespace>
+    <AssemblyName>StreamCompanion.Contract</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\release\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -60,27 +60,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionCommand.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="ISerieStepUIC.cs" />
     <Compile Include="IStreamManager.cs" />
-    <Compile Include="json\deserialize\IDeserializedRoot.cs" />
-    <Compile Include="json\IConverter.cs" />
-    <Compile Include="json\serialize\ISerializedRoot.cs" />
+    <Compile Include="Json\Deserialize\IDeserializedRoot.cs" />
+    <Compile Include="Json\IConverter.cs" />
+    <Compile Include="Json\Serialize\ISerializedRoot.cs" />
     <Compile Include="ISerie.cs" />
     <Compile Include="IProgress.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="IViewModel.cs" />
-    <Compile Include="shellbase\model\IModel.cs" />
-    <Compile Include="shellbase\uic\IUICView.cs" />
-    <Compile Include="shellbase\model\IStepModel.cs" />
+    <Compile Include="ShellBase\Model\IModel.cs" />
+    <Compile Include="ShellBase\Uic\IUICView.cs" />
+    <Compile Include="ShellBase\Model\IStepModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="shellbase\shell\IShellView.cs" />
-    <Compile Include="shellbase\shell\IShellViewModel.cs" />
-    <Compile Include="shellbase\uic\schritt\IStepUIC.cs" />
-    <Compile Include="streamtemplate\IStreamItem.cs" />
-    <Compile Include="streamtemplate\IViewModel.cs" />
-    <Compile Include="streamtemplate\IModel.cs" />
+    <Compile Include="ShellBase\Shell\IShellView.cs" />
+    <Compile Include="ShellBase\Shell\IShellViewModel.cs" />
+    <Compile Include="ShellBase\Uic\Step\IStepUIC.cs" />
+    <Compile Include="StreamTemplate\IStreamItem.cs" />
+    <Compile Include="StreamTemplate\IViewModel.cs" />
+    <Compile Include="StreamTemplate\IModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

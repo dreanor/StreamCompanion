@@ -8,8 +8,8 @@
     <ProjectGuid>{D459A62A-5390-40D5-A188-C524630B5145}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.gmail.mikeundead.streamcompanion.model</RootNamespace>
-    <AssemblyName>com.gmail.mikeundead.streamcompanion.model</AssemblyName>
+    <RootNamespace>StreamCompanion.Model</RootNamespace>
+    <AssemblyName>StreamCompanion.Model</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\release\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,14 +25,18 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="helper.mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="helper.utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="helper.mvvm">
+      <HintPath>..\..\lib\Helper\helper.mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="helper.utils">
+      <HintPath>..\..\lib\Helper\helper.utils.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -51,9 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\contract\contract.csproj">
-      <Project>{458D67F5-7079-45FD-9FFC-6C7B543E4235}</Project>
-      <Name>contract</Name>
+    <ProjectReference Include="..\contract\Contract.csproj">
+      <Project>{458d67f5-7079-45fd-9ffc-6c7b543e4235}</Project>
+      <Name>Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

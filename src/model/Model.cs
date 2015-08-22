@@ -1,10 +1,10 @@
-﻿using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.ShellBase.Model;
 using helper.utils.baseclasses;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
-namespace com.gmail.mikeundead.streamcompanion.model
+namespace StreamCompanion.Model
 {
     public class Model : NotifyPropertyChangedBase<IModel>, IModel
     {

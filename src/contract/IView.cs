@@ -1,6 +1,6 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract.shellbase.uic;
+﻿using StreamCompanion.Contract.ShellBase.Uic;
 
-namespace com.gmail.mikeundead.streamcompanion.contract
+namespace StreamCompanion.Contract
 {
     public interface IView : IUICView
     {

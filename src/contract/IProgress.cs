@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace com.gmail.mikeundead.streamcompanion.contract
+namespace StreamCompanion.Contract
 {
     public interface IProgress : INotifyPropertyChanged
     {

@@ -1,11 +1,10 @@
-﻿using System.Collections.ObjectModel;
-using com.gmail.mikeundead.streamcompanion.contract;
+﻿using StreamCompanion.Contract;
 using helper.mvvm.baseclasses;
+using System.Collections.ObjectModel;
+using System;
 
-namespace com.gmail.mikeundead.streamcompanion.itemviewmodel
+namespace StreamCompanion.ItemViewModel
 {
-    using System;
-
     public class Serie : ViewModelBase<ISerie>, ISerie
     {
         public Serie(int number, string title, Progress progress, int rating, string type, string comment, string stream)

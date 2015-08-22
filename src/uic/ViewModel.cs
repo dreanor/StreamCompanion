@@ -1,7 +1,7 @@
-﻿using com.gmail.mikeundead.streamcompanion.contract;
-using com.gmail.mikeundead.streamcompanion.contract.shellbase.model;
+﻿using StreamCompanion.Contract;
+using StreamCompanion.Contract.ShellBase.Model;
 
-namespace com.gmail.mikeundead.streamcompanion.uic
+namespace StreamCompanion.Uic
 {
     public class ViewModel : SeriesBase
     {

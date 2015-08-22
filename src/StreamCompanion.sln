@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contract", "contract\contract.csproj", "{458D67F5-7079-45FD-9FFC-6C7B543E4235}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "contract\Contract.csproj", "{458D67F5-7079-45FD-9FFC-6C7B543E4235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jsonconverter", "jsonconverter\jsonconverter.csproj", "{C01BD5CB-B16B-44FD-B859-B95B5B241652}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConverter", "jsonconverter\JsonConverter.csproj", "{C01BD5CB-B16B-44FD-B859-B95B5B241652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shellviewmodel", "viewmodel\shellviewmodel.csproj", "{E75F2BEF-F5DD-4A54-9930-2AF27C913540}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellViewModel", "viewmodel\ShellViewModel.csproj", "{E75F2BEF-F5DD-4A54-9930-2AF27C913540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{9FA5AD62-5A75-41FC-940F-68B258284F2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "app\App.csproj", "{9FA5AD62-5A75-41FC-940F-68B258284F2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uic", "uic\uic.csproj", "{92D01EC1-F123-4BA5-B527-E97AEBD55A87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uic", "uic\Uic.csproj", "{92D01EC1-F123-4BA5-B527-E97AEBD55A87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{D459A62A-5390-40D5-A188-C524630B5145}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "model\Model.csproj", "{D459A62A-5390-40D5-A188-C524630B5145}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itemviewmodel", "itemviewmodel\itemviewmodel.csproj", "{C75292A9-1A3E-4D96-A431-BEF6C00515B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemViewModel", "itemviewmodel\ItemViewModel.csproj", "{C75292A9-1A3E-4D96-A431-BEF6C00515B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "controller", "controller\controller.csproj", "{20AFB920-F93E-4467-AFA7-248C8E801D11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "controller\Controller.csproj", "{20AFB920-F93E-4467-AFA7-248C8E801D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "streamtemplate", "StreamTemplate\streamtemplate.csproj", "{7969AD33-E79E-4EAE-8050-562720283CB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamTemplate", "StreamTemplate\StreamTemplate.csproj", "{7969AD33-E79E-4EAE-8050-562720283CB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{B8FF582B-7CBA-494A-B040-24D6E1CFAF7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B8FF582B-7CBA-494A-B040-24D6E1CFAF7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

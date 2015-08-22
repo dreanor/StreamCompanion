@@ -1,6 +1,3 @@
-# TODO #
+[![Build status](https://ci.appveyor.com/api/projects/status/q4gc9dgql402boy1?svg=true)](https://ci.appveyor.com/project/dreanor/streamcompanion)
 
-
-* Get artist for complete artstyle and custom themes
-* Cleanup project structure, kinda messy with names
-* Setup online functions and get a sexy webserver
+stuff...

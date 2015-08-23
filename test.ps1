@@ -1,1 +1,1 @@
-$releasenotes = "meh"
+$releasenotes = "meh meh meh meh\nnewline"

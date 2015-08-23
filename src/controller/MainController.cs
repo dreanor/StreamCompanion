@@ -3,7 +3,6 @@ using StreamCompanion.Contract.Json;
 using StreamCompanion.Contract.Json.Deserialize;
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.Contract.StreamTemplate;
-using StreamCompanion.Controller.Properties;
 using StreamCompanion.JsonConverter;
 using StreamCompanion.StreamTemplate;
 using System;
@@ -41,8 +40,6 @@ namespace StreamCompanion.Controller
 
             this.TryLoadSettings();
         }
-
-        public string ChangelogPath { get; private set; }
 
         public string GenerateNextEpisodeStream(ISerie serie)
         {
@@ -84,18 +81,6 @@ namespace StreamCompanion.Controller
                 this.SaveData();
                 this.SaveStreamTemplates(this.GetDefaultStreams());
             }
-
-            this.CopyChangelog();
-        }
-
-        private void CopyChangelog()
-        {
-            const string changelog = "changelog.txt";
-            string[] words = Resources.Changelog.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-
-            File.WriteAllLines(Path.Combine(rootPath, changelog), words);
-
-            this.ChangelogPath = Path.Combine(this.rootPath, changelog);
         }
 
         private IModel GetDefaultStreams()

@@ -27,8 +27,8 @@ namespace StreamCompanion.ShellViewModel
             this.ContactCmd = new ActionCommand(() => Process.Start("mailto:mikeundead@gmail.com"));
             this.OpenOptionsCmd = new ActionCommand(() => { this.AreOptionsVisible = true; this.IsHelpVisible = false; });
             this.OpenHelpCmd = new ActionCommand(() => { this.AreOptionsVisible = false; this.IsHelpVisible = true; });
-            this.HelpCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki/How-to-use"));
-            this.ShowChangelogCmd = new ActionCommand(() => Process.Start(controller.ChangelogPath));
+            this.HelpCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki"));
+            this.ShowChangelogCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki/Changelog"));
         }
 
         public ObservableCollection<IStepUIC> Steps

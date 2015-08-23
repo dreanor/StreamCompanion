@@ -12,7 +12,5 @@ namespace StreamCompanion.Contract
         void SaveStreamTemplates(IModel model);
 
         IEnumerable<IStreamItem> LoadStreamTemplates();
-
-        string ChangelogPath { get; }
     }
 }

@@ -8,7 +8,8 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 environment:
-  COVERALLS_REPO_TOKEN: quDDo9JxK5vPfs3VNWTnLOs71nkheFF0A
+  COVERALLS_REPO_TOKEN:
+    secure: PaJDLDEvaHHm0I9/8Izcj85pKyBJbrK7G+M34STPeM6nZBzXrlZVOEfEGB3HIIea
 build:
   verbosity: minimal
 artifacts:

@@ -12,6 +12,9 @@ environment:
     secure: Y2fETDoY+d1VZHp1DhUrRz974nmFmfu46OaeJz1rEeDdFQ0zzSJrN4KNwNgciFry
 build:
   verbosity: minimal
+after_test:
+- src\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"src\packages\NunitRunnerTask.2.0.7\build\NUnit\nunit-console.exe" -targetargs:"/noshadow /domain:single  src\Tests\bin\Release\StreamCompanion.Tests.dll" -output:coverage.xml
+- src\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --opencover coverage.xml
 artifacts:
 - path: src\App\bin\Release\StreamCompanion.exe
 deploy:
@@ -20,7 +23,3 @@ deploy:
   auth_token:
     secure: G+MoH/V2gqXJaarjkGX9BzMPAawLJWcGo6QE4R837zjC8168+253+xctFYZAK8Ja
   artifact: 
-after_test: 
-# generate report for NUnit testing framework:
-    - src\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"src\packages\NunitRunnerTask.2.0.7\build\NUnit\nunit-console.exe" -targetargs:"/noshadow /domain:single  src\Tests\bin\Release\StreamCompanion.Tests.dll" -output:coverage.xml
-    - src\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --opencover coverage.xml

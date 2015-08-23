@@ -1,1 +1,0 @@
-$(releasenotes) = "meh meh meh meh\nnewline"

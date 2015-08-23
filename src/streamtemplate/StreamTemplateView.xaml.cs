@@ -1,4 +1,5 @@
 ﻿using StreamCompanion.Contract.StreamTemplate;
+using System.ComponentModel;
 
 namespace StreamCompanion.StreamTemplate
 {
@@ -9,6 +10,11 @@ namespace StreamCompanion.StreamTemplate
             InitializeComponent();
             this.DataContext = viewModel;
             this.Show();
+        }
+
+        public void CloseView()
+        {
+            this.Close();
         }
     }
 }

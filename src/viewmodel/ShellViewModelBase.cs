@@ -81,19 +81,13 @@ namespace StreamCompanion.ShellViewModel
             var viewModel = new ViewModel(this.controller);
             viewModel.PropertyChanged += this.HandlePropertyChanged;
             this.tempStreamTemplateView = new StreamTemplateView(viewModel);
-            this.tempStreamTemplateView.Closing += this.HandleUnexpectedClosing;
-        }
-
-        private void HandleUnexpectedClosing(object sender, CancelEventArgs e)
-        {
-            this.IsEnabled = true;
         }
 
         private void HandlePropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "IsDone")
             {
-                this.tempStreamTemplateView.Close();
+                this.tempStreamTemplateView.CloseView();
                 this.IsEnabled = true;
             }
         }

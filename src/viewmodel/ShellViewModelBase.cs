@@ -9,7 +9,7 @@ using helper.mvvm.baseclasses;
 using helper.mvvm.commands;
 
 namespace StreamCompanion.ShellViewModel
-{
+{ 
     public abstract class ShellViewModelBase : ViewModelBase<IShellViewModel>, IShellViewModel
     {
         private readonly IController controller;

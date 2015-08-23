@@ -211,7 +211,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Resources\helper.mvvm.dll" />
   </ItemGroup>
   <ItemGroup>

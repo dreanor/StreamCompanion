@@ -9,7 +9,7 @@ assembly_info:
   assembly_informational_version: '{version}'
 environment:
   COVERALLS_REPO_TOKEN:
-    secure: PaJDLDEvaHHm0I9/8Izcj85pKyBJbrK7G+M34STPeM6nZBzXrlZVOEfEGB3HIIea
+    secure: Y2fETDoY+d1VZHp1DhUrRz974nmFmfu46OaeJz1rEeDdFQ0zzSJrN4KNwNgciFry
 build:
   verbosity: minimal
 artifacts:

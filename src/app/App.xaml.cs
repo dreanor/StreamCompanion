@@ -18,21 +18,7 @@ namespace StreamCompanion.App
     {
         public App()
         {
-            UpdateReleaseNotes();
-
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
-        }
-
-        private void UpdateReleaseNotes()
-        {
-            var appVeyorApiUrl = Environment.GetEnvironmentVariable("APPVEYOR_API_URL");
-            string data = "{ \"name\": \"releasenotes\", \"value\": \"test\nmulti\nline\n#7\"}";
-
-            using (var webClient = new WebClient())
-            {
-                webClient.BaseAddress = "appVeyorApiUrl";
-                webClient.UploadData("api/build/variables", "POST", Encoding.UTF8.GetBytes(data));
-            }
         }
 
         private void App_OnStartup(object sender, StartupEventArgs e)

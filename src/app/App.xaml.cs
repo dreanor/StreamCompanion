@@ -6,6 +6,10 @@ using StreamCompanion.Model;
 using StreamCompanion.ShellViewModel;
 using StreamCompanion.Uic;
 using System;
+using System.Net;
+using System.Reflection;
+using System.Resources;
+using System.Text;
 using System.Windows;
 
 namespace StreamCompanion.App
@@ -14,22 +18,21 @@ namespace StreamCompanion.App
     {
         public App()
         {
+            UpdateReleaseNotes();
+
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
         }
 
-        System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        private void UpdateReleaseNotes()
         {
-            string dllName = args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(',')) : args.Name.Replace(".dll", "");
+            var appVeyorApiUrl = Environment.GetEnvironmentVariable("APPVEYOR_API_URL");
+            string data = "{ \"name\": \"releasenotes\", \"value\": \"test\nmulti\nline\n#7\"}";
 
-            dllName = dllName.Replace(".", "_");
-
-            if (dllName.EndsWith("_resources")) return null;
-
-            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(GetType().Namespace + ".Properties.Resources", System.Reflection.Assembly.GetExecutingAssembly());
-
-            byte[] bytes = (byte[])rm.GetObject(dllName);
-
-            return System.Reflection.Assembly.Load(bytes);
+            using (var webClient = new WebClient())
+            {
+                webClient.BaseAddress = "appVeyorApiUrl";
+                webClient.UploadData("api/build/variables", "POST", Encoding.UTF8.GetBytes(data));
+            }
         }
 
         private void App_OnStartup(object sender, StartupEventArgs e)
@@ -46,6 +49,21 @@ namespace StreamCompanion.App
             IShellViewModel shellViewmodel = new MainShellViewModel(controller, currentlyWatching, completed, onHold, dropped, planToWatch);
             var shellView = new ShellView(shellViewmodel);
             shellView.Show();
+        }
+
+        private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            string dllName = args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(',')) : args.Name.Replace(".dll", "");
+
+            dllName = dllName.Replace(".", "_");
+
+            if (dllName.EndsWith("_resources")) return null;
+
+            ResourceManager rm = new ResourceManager(GetType().Namespace + ".Properties.Resources", Assembly.GetExecutingAssembly());
+
+            byte[] bytes = (byte[])rm.GetObject(dllName);
+
+            return System.Reflection.Assembly.Load(bytes);
         }
     }
 }

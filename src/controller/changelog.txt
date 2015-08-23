@@ -2,6 +2,7 @@
 - Moved Project to GitHub
 - Integrated appveyor
 - Removed DropBox integration
+- Fixed #7
 
 1.0.5
 - Remodeled Status bar

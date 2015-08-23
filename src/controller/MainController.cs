@@ -3,6 +3,7 @@ using StreamCompanion.Contract.Json;
 using StreamCompanion.Contract.Json.Deserialize;
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.Contract.StreamTemplate;
+using StreamCompanion.Controller.Properties;
 using StreamCompanion.JsonConverter;
 using StreamCompanion.StreamTemplate;
 using System;
@@ -90,18 +91,9 @@ namespace StreamCompanion.Controller
         private void CopyChangelog()
         {
             const string changelog = "changelog.txt";
-            using (var resource = GetType().Assembly.GetManifestResourceStream("StreamCompanion.Controller.changelog.txt"))
-            {
-                if (resource == null)
-                {
-                    return;
-                }
+            string[] words = Resources.Changelog.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
-                using (var stream = File.OpenWrite(Path.Combine(rootPath, changelog)))
-                {
-                    resource.CopyTo(stream);
-                }
-            }
+            File.WriteAllLines(Path.Combine(rootPath, changelog), words);
 
             this.ChangelogPath = Path.Combine(this.rootPath, changelog);
         }

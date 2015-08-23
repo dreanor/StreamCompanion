@@ -1,6 +1,7 @@
 1.0.6
 - Moved Project to GitHub
 - Integrated appveyor
+- Removed DropBox integration
 
 1.0.5
 - Remodeled Status bar

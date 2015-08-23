@@ -11,6 +11,7 @@ environment:
   COVERALLS_REPO_TOKEN:
     secure: Y2fETDoY+d1VZHp1DhUrRz974nmFmfu46OaeJz1rEeDdFQ0zzSJrN4KNwNgciFry
 build:
+  project: src\StreamCompanion.sln
   verbosity: minimal
 after_test:
 - src\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"src\packages\NunitRunnerTask.2.0.7\build\NUnit\nunit-console.exe" -targetargs:"/noshadow /domain:single  src\Tests\bin\Release\StreamCompanion.Tests.dll" -output:coverage.xml

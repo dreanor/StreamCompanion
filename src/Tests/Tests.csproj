@@ -32,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="helper.dialog">
+      <HintPath>..\..\lib\Helper\helper.dialog.dll</HintPath>
+    </Reference>
+    <Reference Include="helper.filehelper">
+      <HintPath>..\..\lib\Helper\helper.filehelper.dll</HintPath>
+    </Reference>
+    <Reference Include="helper.mvvm">
+      <HintPath>..\..\lib\Helper\helper.mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="helper.utils">
+      <HintPath>..\..\lib\Helper\helper.utils.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -44,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Test.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +64,40 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\contract\Contract.csproj">
+      <Project>{458d67f5-7079-45fd-9ffc-6c7b543e4235}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\controller\Controller.csproj">
+      <Project>{20afb920-f93e-4467-afa7-248c8e801d11}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\itemviewmodel\ItemViewModel.csproj">
+      <Project>{c75292a9-1a3e-4d96-a431-bef6c00515b7}</Project>
+      <Name>ItemViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\jsonconverter\JsonConverter.csproj">
+      <Project>{c01bd5cb-b16b-44fd-b859-b95b5b241652}</Project>
+      <Name>JsonConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\model\Model.csproj">
+      <Project>{d459a62a-5390-40d5-a188-c524630b5145}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StreamTemplate\StreamTemplate.csproj">
+      <Project>{7969ad33-e79e-4eae-8050-562720283cb2}</Project>
+      <Name>StreamTemplate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\uic\Uic.csproj">
+      <Project>{92d01ec1-f123-4ba5-b527-e97aebd55a87}</Project>
+      <Name>Uic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\viewmodel\ShellViewModel.csproj">
+      <Project>{e75f2bef-f5dd-4a54-9930-2af27c913540}</Project>
+      <Name>ShellViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

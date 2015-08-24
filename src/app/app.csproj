@@ -134,11 +134,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -202,57 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\helper.mvvm.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\helper.utils.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Newtonsoft.Json.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.Contract.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\System.Windows.Interactivity.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\helper.di.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\helper.filehelper.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MahApps.Metro.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.ItemViewModel.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.JsonConverter.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.Model.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.StreamTemplate.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.Uic.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.ShellViewModel.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StreamCompanion.Controller.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

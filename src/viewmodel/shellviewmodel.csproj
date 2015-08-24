@@ -41,9 +41,6 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="helper.di">
-      <HintPath>..\..\lib\Helper\helper.di.dll</HintPath>
-    </Reference>
     <Reference Include="helper.mvvm">
       <HintPath>..\..\lib\Helper\helper.mvvm.dll</HintPath>
     </Reference>

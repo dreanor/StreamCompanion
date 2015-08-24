@@ -1,223 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Stream Companion - Your companion for Series, Movies and more!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<link href="font/stylesheet.css" rel="stylesheet" type="text/css" />	
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-<link href="css/styles.css" rel="stylesheet" type="text/css" />
-<link href="css/media-queries.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <title>Stream Companion - Open Source Manager</title>
 
-<meta name="viewport" content="width=device-width" />
- 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<link href='http://fonts.googleapis.com/css?family=Exo:400,800' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 
-<body data-spy="scroll">
+<body>
 
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-	
-			<a class="brand pull-left" href="#">
-			<font color="white">Stream Companion</font>
-			</a>
-	
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-		
-			<div class="nav-collapse collapse">
-				<ul id="nav-list" class="nav pull-right">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#updates">Updates</a></li>
-					<li><a href="#screenshots">Screenshots</a></li>
-					<li><a href="#tracker">Report a Bug</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div>
-		
-		</div>
-	</div>
-</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Stream Companion</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-<div class="container content container-fluid" id="home">
-	<div class="row-fluid">
-		<div class="span7">
-			<div class="visible-desktop" id="icon">
-				<img src="img/app_icon.png" />
-			</div>
-			<div id="app-name">
-				<h1>Stream Companion</h1>
-			</div>
-			<div id="tagline">
-				A Free Application to sort your Series, Movies and more!
-			</div>
-			<div class="hidden-desktop" id="phones">
-				<img src="img/phones.png">
-			</div>
-			<div id="description">
-				Stream Companion is a free, fully responsive managing application for your series, movies and other things that you watch.
-			</div>
-			<ul id="features">
-				<li>Developed in C# with .NET 4.0</li>
-				<li>Local and Online access</li>
-				<li>With an Integrated Stream Generator</li>
-				<li>Completely Free!</li>
-			</ul>
-			<div class="download-box">
-				<strong>Requirements:</strong><br>	
-				.Net 4.0 downloadable at <a href="http://www.microsoft.com/en-us/download/details.aspx?id=17851">microsoft.com</a>
-				<br><br>
-				<button onclick="location.href='https://dl.dropboxusercontent.com/u/24979157/deployment/streamcompanion/stable/setup.exe'" class="btn btn-primary">Download .exe</button>
-				<br><br>
-				<button onclick="location.href='https://github.com/dreanor/StreamCompanion/zipball/master'" class="btn btn-primary">Download project as .zip</button>
-				<br><br>
-				<button onclick="location.href='https://github.com/dreanor/StreamCompanion/tarball/master'" class="btn btn-primary">Download project as tar.gz</button>
-				 <br><br>
-				<button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PLVH8DUZLGNFS'" class="btn btn-primary">Donate</button>
-			</div>				
-		</div>
-	</div>
-	
-	<div class="row-fluid" id="about">
-	
-		<div class="span6">
-			<h2 class="page-title" id="scroll_up">
-				About
-				<a href="#home" class="arrow-top">
-				<img src="img/arrow-top.png">
-				</a>
-			</h2>
-			
-			<p>Stream Companion is 100% free to use. You can add as many Series, Movies or what ever you want to the list, set it as currently watching, completed, on hold, dropped or plan to watch.</p> 
-			<p>Links to Streams will be automatically generated and updated once you increase your episode counter or reload them manually.</p>
-			<p>For future use, your list will be automatically uploaded for online accessibility.</p>
-			<p>Stream Companion by Dreanor is licensed under All Rights Reserved.</p>
-			
-		</div>
-	
-		<div class="span6 updates" id="updates">
-			<h2 class="page-title" id="scroll_up">
-				Updates
-				<a href="#home" class="arrow-top">
-				<img src="img/arrow-top.png">
-				</a>
-			</h2>
-			
-			<!-- UPDATES & RELEASE NOTES NEW/FIX -->
-			<p>Visit our <a href="https://github.com/dreanor/StreamCompanion/wiki">Wiki</a> for the current Changelog</p>	
-		</div>
-	</div>	
-	
-	<!-- SCREENSHOTS -->
-	<div class="row-fluid" id="screenshots">
-		
-		<h2 class="page-title" id="scroll_up">
-				Screenshots
-				<a href="#home" class="arrow-top">
-				<img src="img/arrow-top.png">
-				</a>
-			</h2>
-		
-		<!-- SCREENSHOT IMAGES ROW 1-->
-		<ul class="thumbnails">
-			<li class="span9">
-				<a href="img/screenshot1.png" rel="gallery" class="thumbnail">
-				<img src="img/screenshot1.png" alt="">
-				</a>
-			</li>
-		</ul>	
-		
-		<!-- SCREENSHOT IMAGES ROW 2-->		
-		<ul class="thumbnails">
-						<li class="span9">
-				<a href="img/screenshot2.png" rel="gallery" class="thumbnail">
-				<img src="img/screenshot2.png" alt="">
-				</a>
-			</li>
-		</ul>
-		
-				<!-- SCREENSHOT IMAGES ROW 2-->		
-		<ul class="thumbnails">
-						<li class="span9">
-				<a href="img/screenshot3.png" rel="gallery" class="thumbnail">
-				<img src="img/screenshot3.png" alt="">
-				</a>
-			</li>
-		</ul>
-	</div>
-	
-	<!-- IssueTracker -->
-	<div class="row-fluid" id="tracker">
-	
-		<h2 class="page-title" id="scroll_up">
-				Report a Bug
-				<a href="#home" class="arrow-top">
-				<img src="img/arrow-top.png">
-				</a>
-			</h2>
-		
-		<!-- CONTACT INFO -->
-		<div class="span15">
-			<p>Thanks for your interest in Stream Companion! One of the best ways you can help us to improve is to let us know about any problems you find.</p>
-			<p>Here's how to report bugs:</p>
-			<ul>
-			  <li><p>Search for your bug to see if anyone has already reported it. Don't forget to search for all issues, not just open ones, as your issue might already have been reported and closed. To help find the most popular results, sort the result by votes.</p></li>
-			  <li><p>If you find your issue and it's important to you, vote for it! That's how we know which bugs are most important to fix.</p></li>
-			  <li><p>If no one's reported your bug, file the bug.<p/></li>
-			</ul>
 
-			<p>Keep in mind that an issue tracker is not a user support forum. It is a list of pending technical tasks, along with information relevant for those tasks, and information about progress on those tasks including which ones might get worked on in the short term.</p>
-			<p>In general, please put as much info in bugs as you can. Just a one liner telling us something isn't working is usually useless, and will probably be closed without any action. The more detail you provide, the more likely your issue is to be resolved.</p>
-			<button onclick="location.href='https://github.com/dreanor/StreamCompanion/issues'" class="btn btn-primary">Report</button><br><br>
-		</div>
-	</div>	
-	
-	
-		<!-- CONTACT -->
-	<div class="row-fluid" id="contact">
-	
-		<h2 class="page-title" id="scroll_up">
-				Contact
-				<a href="#home" class="arrow-top">
-				<img src="img/arrow-top.png">
-				</a>
-			</h2>
-		
-		<!-- CONTACT INFO -->
-		<div class="span10" id="contact-info">
-			<p>You may contact us about general business inquiries, feature requests or to report bugs in the application!<p>
-			<p><a href="mailto:mikeundead@gmail.com">mikeundead@gmail.com</a></p>
-		</div>
-	</div>	
-	
-</div>
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
 
-<div class="footer container container-fluid">
-	<div id="copyright">
-		Copyright &copy; 2013 Dreanor<br>
-		Licensed under All Rights Reserved.
-	</div>
-</div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Stream Companion</h1>
+                        <h3>A Open Source Manager for everything you watch!</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/asc_dreanor" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/dreanor/streamcompanion" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-collapse.js"></script>
-<script src="js/bootstrap-scrollspy.js"></script>
-<script src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-<script src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-<script src="js/init.js"></script>
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">What is Stream Companion?</h2>
+                    <p class="lead">
+					Stream Companion is a free open source, fully responsive managing application for your series, movies and other things that you watch.
+
+					<br><br>
+					The only requirement for this is .NET 4.0 from Microsoft, get it <a target="_blank" href="http://www.microsoft.com/en-us/download/details.aspx?id=17851">here</a>.
+					</p>
+                
+				</div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/icon.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Easy to use!</h2>
+                    <p class="lead">Self explaning usage. But if you want to read more or get stuck sometimes check out the <a target="_blank" href="https://github.com/dreanor/StreamCompanion/wiki">usage guide</a>.
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/overview.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <!-- /.content-section-a -->
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Download now or Contribute on GitHub!</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://twitter.com/asc_dreanor" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dreanor/streamcompanion" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Dreanor 2013.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>

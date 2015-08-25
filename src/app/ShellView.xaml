@@ -21,18 +21,16 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <controls:MetroWindow.WindowCommands>
+    <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
             <Button Content="Options" 
                     ToolTip="Show Option menu"
                     Command="{Binding Path=OpenOptionsCmd}"/>
-
             <Button Content="Help" 
                     ToolTip="Show Help menu"
                     Command="{Binding Path=OpenHelpCmd}"/>
         </controls:WindowCommands>
-    </controls:MetroWindow.WindowCommands>
-
+    </controls:MetroWindow.RightWindowCommands>
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
             <controls:Flyout Header="Options" Position="Right" Width="500" IsOpen="{Binding Path=AreOptionsVisible, UpdateSourceTrigger=PropertyChanged}">

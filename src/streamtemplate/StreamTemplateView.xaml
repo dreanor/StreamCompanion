@@ -1,7 +1,7 @@
 ﻿<Controls:MetroWindow x:Class="StreamCompanion.StreamTemplate.StreamTemplateView"
 					  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-					  xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
+					  xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 					  Title="Edit Stream Templates" 
 					  Topmost="true"
                       Width="800"
@@ -92,15 +92,15 @@
 					<StackPanel Orientation="Vertical">
 						<TextBlock Text="Streaming Website settings"/>
 						<TextBox Margin="0,5,0,0" 
-								 Controls:TextboxHelper.Watermark="Website (required)" 
+								 Controls:TextBoxHelper.Watermark="Website (required)" 
 								 ToolTip="ex. http://www.watchcartoononline.com"
 								 Text="{Binding Path=NewStreamingWebsite, UpdateSourceTrigger=PropertyChanged}"/>
 						<TextBox Margin="0,5,0,0" 
-								 Controls:TextboxHelper.Watermark="Whitespace replacement (required)" 
+								 Controls:TextBoxHelper.Watermark="Whitespace replacement (required)" 
 								 ToolTip="Whitespace replacement"
 								 Text="{Binding Path=WhitespaceReplacement, UpdateSourceTrigger=PropertyChanged}"/>
 						<TextBox Margin="0,5,0,5" 
-								 Controls:TextboxHelper.Watermark="Build generic url (required)" 
+								 Controls:TextBoxHelper.Watermark="Build generic url (required)" 
 								 ToolTip="Consider we used http://www.watchcartoononline.com as website, the generic url would be '{0}-season-{1}-episode-{2}' parameters are; 0 for title; 1 for season; 2 for episode."
 								 Text="{Binding Path=GenericUrl, UpdateSourceTrigger=PropertyChanged}"/>
 

@@ -1,4 +1,5 @@
-﻿using StreamCompanion.Contract;
+﻿using Octokit;
+using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.Contract.ShellBase.Shell;
 using StreamCompanion.Controller;
@@ -6,10 +7,12 @@ using StreamCompanion.Model;
 using StreamCompanion.ShellViewModel;
 using StreamCompanion.Uic;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using System.Resources;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace StreamCompanion.App

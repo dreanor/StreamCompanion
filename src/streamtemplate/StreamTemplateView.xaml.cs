@@ -11,10 +11,5 @@ namespace StreamCompanion.StreamTemplate
             this.DataContext = viewModel;
             this.Show();
         }
-
-        public void CloseView()
-        {
-            this.Close();
-        }
     }
 }

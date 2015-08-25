@@ -122,7 +122,7 @@
                 <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
                     <StackPanel Orientation="Vertical">
                         <TextBox Margin="0,5,0,0" 
-                                 Controls:TextboxHelper.Watermark="Name" 
+                                 Controls:TextBoxHelper.Watermark="Name" 
                                  ToolTip="Name"
                                  Text="{Binding Path=NewSerieName, UpdateSourceTrigger=PropertyChanged}"/>
                         <ComboBox ItemsSource="{Binding Path=Types, UpdateSourceTrigger=PropertyChanged}"
@@ -130,19 +130,19 @@
                                   Margin="0,5,0,0" 
                                   ToolTip="Type"/>
                         <TextBox Margin="0,5,0,0" 
-                                 Controls:TextboxHelper.Watermark="Season (optional)" 
+                                 Controls:TextBoxHelper.Watermark="Season (optional)" 
                                  ToolTip="Season"
                                  Text="{Binding Path=NewSerieSeason, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBox Margin="0,5,0,0" 
-                                 Controls:TextboxHelper.Watermark="Number of current Episode (default 0)" 
+                                 Controls:TextBoxHelper.Watermark="Number of current Episode (default 0)" 
                                  ToolTip="Number of current Episode"
                                  Text="{Binding Path=NewSerieCurrentEpisode, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBox Margin="0,5,0,0" 
-                                 Controls:TextboxHelper.Watermark="Number of last Episode" 
+                                 Controls:TextBoxHelper.Watermark="Number of last Episode" 
                                  ToolTip="Number of last Episode"
                                  Text="{Binding Path=NewSerieMaxEpisodes, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBox Margin="0,5,0,0" 
-                                 Controls:TextboxHelper.Watermark="Comment (optional)" 
+                                 Controls:TextBoxHelper.Watermark="Comment (optional)" 
                                  ToolTip="Comment (optional)"
                                  Text="{Binding Path=NewSerieComment, UpdateSourceTrigger=PropertyChanged}"/>
 

@@ -1,0 +1,39 @@
+﻿using NUnit.Framework;
+using StreamCompanion.Contract;
+using StreamCompanion.Contract.StreamTemplate;
+using StreamCompanion.Controller;
+using StreamCompanion.ItemViewModel;
+using StreamCompanion.StreamTemplate;
+using System.Collections.Generic;
+
+namespace Tests.Controller
+{
+    [TestFixture]
+    public class StreamManagerUnitTest
+    {
+        private StreamManager streamManagerSUT;
+
+        [SetUp]
+        public void SetUp()
+        {
+             streamManagerSUT = new StreamManager();
+        }
+
+        [TestCase(SerieType.Movie, "https://www.google.com/#q=TestMovie+stream&safe=off", 0)]
+        [TestCase(SerieType.Mixed, "https://www.google.com/#q=TestMovie+episode+1+stream&safe=off", null)]
+        [TestCase(SerieType.Mixed, "https://www.google.com/#q=TestMovie+season+1+episode+1+stream&safe=off", 1)]
+        public void CanCorrectlyGenerateNextEpisodesStreamWithoutCachedStreams(SerieType serieType, string expected, int? season) 
+        {
+            ISerie serie = new Serie(0, "TestMovie", new Progress(0, 1, season), 0, serieType.ToString(), string.Empty, string.Empty);
+
+            string actual = streamManagerSUT.GenerateNextEpisodeStream(serie, new List<IStreamItem>());
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void CanCorrectlyGenerateNextEpisodesForStreamWithCachedStreams()
+        {
+        }
+    }
+}

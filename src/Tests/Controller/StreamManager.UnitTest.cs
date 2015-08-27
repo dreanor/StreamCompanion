@@ -31,10 +31,22 @@ namespace Tests.Controller
             Assert.AreEqual(expected, actual);
         }
 
-        [Test]
-        public void CanCorrectlyGenerateNextEpisodesForStreamWithCachedStreams()
+        [TestCase(1, "Scrubs", 1, "http://kinox.to/Stream/{0}-1.html,s{1}e{2}", "http://kinox.to/Stream/Scrubs-1.html,s1e1")]
+        [TestCase(1, "Scrubs", 1, "http://kinox.to/Stream/{0}-1.html,s{1}e{2}", "http://kinox.to/Stream/Scrubs-1.html,s1e1")]
+        [TestCase(1, "Scrubs", 1, "http://kinox.to/Stream/{0}-1.html,s{1}", "http://kinox.to/Stream/Scrubs-1.html,s1")]
+        [TestCase(1, "Scrubs", 1, "http://kinox.to/Stream/{0}-1.html", "http://kinox.to/Stream/Scrubs-1.html")]
+        [TestCase(1, "Scrubs", 1, "http://kinox.to/Stream/-1.html", "https://www.google.com/#q=Scrubs+season+1+episode+1+stream&safe=off")]
+        [TestCase(1, "Scrubs", 1, "http://kinox.to/Stream/{0}-1.html,s1e{2}", "http://kinox.to/Stream/Scrubs-1.html,s1e1")]
+        public void CanCorrectlyGenerateNextEpisodesForStreamWithCachedStreams(int? season, string title, int currentEpisode, string pattern, string expected)
         {
+            List<IStreamItem> streams = new List<IStreamItem>();
+            streams.Add(new StreamItem(pattern, "_"));
 
+            ISerie serie = new Serie(0, title, new Progress(currentEpisode, 1, season), 0, SerieType.Mixed.ToString(), string.Empty, string.Empty);
+
+            string actual = streamManagerSUT.GenerateNextEpisodeStream(serie, streams);
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

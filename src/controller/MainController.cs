@@ -62,9 +62,20 @@ namespace StreamCompanion.Controller
 
         public IEnumerable<IStreamItem> LoadStreamTemplates()
         {
-            var streams = this.converter.ImportStreams(this.streamTemplatePath).Streams;
-            this.cachedStreams = streams;
-            return streams;
+            if (File.Exists(this.streamTemplatePath))
+            {
+                var streams = this.converter.ImportStreams(this.streamTemplatePath).Streams;
+                this.cachedStreams = streams;
+                return streams;
+            }
+            else
+            {
+                IModel tmpModel = this.GetDefaultStreams();
+                SaveStreamTemplates(tmpModel);
+                return tmpModel.Streams;
+            }
+
+            return null;
         }
 
         private void TryLoadSettings()
@@ -89,6 +100,8 @@ namespace StreamCompanion.Controller
             streams.Add(new StreamItem("http://www.watchcartoononline.com/{0}-season-{1}-episode-{2}", "-"));
             streams.Add(new StreamItem("http://kinox.to/Stream/{0}-1.html,s{1}e{2}", "_"));
             streams.Add(new StreamItem("http://watchseries.lt/episode/{0}_s{1}_e{2}.html", "_"));
+            streams.Add(new StreamItem("http://gogoanime.tv/{0}-episode-{2}", "-", "Anime", "English"));
+            streams.Add(new StreamItem("http://www.animestv.us/watch/{0}-episode-{2}", "-", "Anime", "English"));
             return new Model(streams);
         }
 

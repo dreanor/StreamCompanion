@@ -225,6 +225,8 @@ namespace StreamCompanion.StreamTemplate
 
         private void AddNewStreamWebsite()
         {
+            this.editMode = false;
+
             this.NewStreamingWebsite = string.Empty;
             this.GenericUrl = string.Empty;
             this.WhitespaceReplacement = string.Empty;

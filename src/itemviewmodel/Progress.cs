@@ -1,5 +1,5 @@
-﻿using StreamCompanion.Contract;
-using helper.mvvm.baseclasses;
+﻿using helper.mvvm.baseclasses;
+using StreamCompanion.Contract;
 
 namespace StreamCompanion.ItemViewModel
 {

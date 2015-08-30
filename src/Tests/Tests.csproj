@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Controller\MainController.UnitTest.cs" />
     <Compile Include="Controller\StreamManager.UnitTest.cs" />
+    <Compile Include="ItemViewModel\Progess.UnitTest.cs" />
+    <Compile Include="ItemViewModel\Serie.UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

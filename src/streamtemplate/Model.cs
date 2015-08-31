@@ -5,7 +5,7 @@ namespace StreamCompanion.StreamTemplate
 {
     public class Model : IModel
     {
-        public Model(IEnumerable<StreamItem> streams)
+        public Model(List<StreamItem> streams)
         {
             this.Streams = new List<IStreamItem>(streams);
         }

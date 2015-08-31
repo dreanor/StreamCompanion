@@ -74,8 +74,6 @@ namespace StreamCompanion.Controller
                 SaveStreamTemplates(tmpModel);
                 return tmpModel.Streams;
             }
-
-            return null;
         }
 
         private void TryLoadSettings()

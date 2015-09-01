@@ -110,10 +110,35 @@ namespace StreamCompanion.Tests.StreamTemplate
             Assert.AreEqual(expectedStreamItem, viewModelSUT.Streams[1]);
         }
 
-        [Test]
-        public void CanExecuteDoneCmd()
+        [TestCase("http://kinox.to/Stream/", "Movie", true, 0)]
+        [TestCase("http://kinox.to/Stream", "Movie,", false, 1)]
+        public void CanExecuteDoneCmd(string newStreamingWebsite, string usedOnTypes, bool editMode, int expectedCount)
         {
-            //todo
+            viewModelSUT.NewStreamingWebsite = newStreamingWebsite;
+            viewModelSUT.WhitespaceReplacement = "_";
+            viewModelSUT.GenericUrl = "{0}-1.html,s{1}e{2}";
+            viewModelSUT.UsedOnTypes = usedOnTypes;
+            if (editMode)
+            {
+                viewModelSUT.SelectedItem = new StreamItem("website/123", "replacement", "Movie", "English");
+                viewModelSUT.EditStreamWebsiteCmd.Execute(null);
+            }
+
+            viewModelSUT.DoneCmd.Execute(null);
+
+            Assert.AreEqual(expectedCount, viewModelSUT.Streams.Count);
+        }
+
+        [Test]
+        public void CanExecuteCancelCmd()
+        {
+            viewModelSUT.IsStreamingWebsiteVisible = true;
+
+            Assert.IsTrue(viewModelSUT.IsStreamingWebsiteVisible);
+
+            viewModelSUT.CancelCmd.Execute(null);
+
+            Assert.IsFalse(viewModelSUT.IsStreamingWebsiteVisible);
         }
     }
 }

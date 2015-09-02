@@ -69,6 +69,9 @@
     <Compile Include="Controller\StreamManager.UnitTest.cs" />
     <Compile Include="ItemViewModel\Progess.UnitTest.cs" />
     <Compile Include="ItemViewModel\Serie.UnitTest.cs" />
+    <Compile Include="JsonConverter\Converter.UnitTest.cs" />
+    <Compile Include="JsonConverter\DeserializedRoot.UnitTest.cs" />
+    <Compile Include="JsonConverter\SerializedRoot.UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamTemplate\StreamItem.UnitTest.cs" />
     <Compile Include="StreamTemplate\Model.UnitTest.cs" />

@@ -65,9 +65,8 @@
     <Compile Include="IController.cs" />
     <Compile Include="ISerieStepUIC.cs" />
     <Compile Include="IStreamManager.cs" />
-    <Compile Include="Json\Deserialize\IDeserializedRoot.cs" />
     <Compile Include="Json\IConverter.cs" />
-    <Compile Include="Json\Serialize\ISerializedRoot.cs" />
+    <Compile Include="Json\IConverterRoot.cs" />
     <Compile Include="ISerie.cs" />
     <Compile Include="IProgress.cs" />
     <Compile Include="IView.cs" />

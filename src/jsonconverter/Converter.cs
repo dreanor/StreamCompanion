@@ -1,7 +1,5 @@
 ﻿using StreamCompanion.Contract;
 using StreamCompanion.Contract.Json;
-using StreamCompanion.Contract.Json.Deserialize;
-using StreamCompanion.Contract.Json.Serialize;
 using StreamCompanion.Contract.StreamTemplate;
 using StreamCompanion.StreamTemplate;
 using helper.filehelper;
@@ -16,7 +14,7 @@ namespace StreamCompanion.JsonConverter
 {
     public class Converter : IConverter
     {
-        public ISerializedRoot Convert(
+        public IConverterRoot Convert(
             Guid id,
             IEnumerable<ISerie> currentlyWatching,
             IEnumerable<ISerie> completed,
@@ -27,7 +25,7 @@ namespace StreamCompanion.JsonConverter
             return new SerializedRoot(id, currentlyWatching, completed, onHold, dropped, planToWatch);
         }
 
-        public void Export(ISerializedRoot serializedRoot, string inputFileFullname)
+        public void Export(IConverterRoot serializedRoot, string inputFileFullname)
         {
             using (var fileStream = File.Open(inputFileFullname, FileMode.Create))
             using (var streamWriter = new StreamWriter(fileStream, Encoding.GetEncoding("Windows-1252")))
@@ -42,7 +40,7 @@ namespace StreamCompanion.JsonConverter
             }
         }
 
-        public IDeserializedRoot Import(string inputFileFullname)
+        public IConverterRoot Import(string inputFileFullname)
         {
             var readLines = new FileHelper().ReadAllLines(inputFileFullname);
             string value = readLines.Aggregate(string.Empty, (current, line) => current + line);

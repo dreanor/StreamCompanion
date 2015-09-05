@@ -15,6 +15,10 @@ namespace StreamCompanion.ShellViewModel
         private readonly IController controller;
         private StreamTemplateView tempStreamTemplateView;
 
+        public ShellViewModelBase()
+        {
+        }
+
         protected ShellViewModelBase(IController controller, params IStepUIC[] stepUics)
         {
             this.IsEnabled = true;

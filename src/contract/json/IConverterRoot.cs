@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StreamCompanion.Contract.Json.Deserialize
+namespace StreamCompanion.Contract.Json
 {
-    public interface IDeserializedRoot
+    public interface IConverterRoot
     {
         Guid Id { get; }
 

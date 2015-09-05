@@ -73,6 +73,7 @@
     <Compile Include="JsonConverter\DeserializedRoot.UnitTest.cs" />
     <Compile Include="JsonConverter\SerializedRoot.UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShellViewModel\ShellViewModelBase.UnitTest.cs" />
     <Compile Include="StreamTemplate\StreamItem.UnitTest.cs" />
     <Compile Include="StreamTemplate\Model.UnitTest.cs" />
     <Compile Include="StreamTemplate\ViewModel.UnitTest.cs" />

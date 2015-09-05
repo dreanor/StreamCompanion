@@ -1,12 +1,12 @@
 ﻿using StreamCompanion.Contract;
-using StreamCompanion.Contract.Json.Deserialize;
+using StreamCompanion.Contract.Json;
 using StreamCompanion.ItemViewModel;
 using System;
 using System.Collections.Generic;
 
 namespace StreamCompanion.JsonConverter
 {
-    public class DeserializedRoot : IDeserializedRoot
+    public class DeserializedRoot : IConverterRoot
     {
         public DeserializedRoot(
             Guid id,

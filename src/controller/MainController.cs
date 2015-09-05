@@ -1,6 +1,5 @@
 ﻿using StreamCompanion.Contract;
 using StreamCompanion.Contract.Json;
-using StreamCompanion.Contract.Json.Deserialize;
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.Contract.StreamTemplate;
 using StreamCompanion.JsonConverter;
@@ -110,7 +109,7 @@ namespace StreamCompanion.Controller
             new Task(() => this.LoadData(root)).Start();
         }
 
-        private void LoadData(IDeserializedRoot root)
+        private void LoadData(IConverterRoot root)
         {
             foreach (var serie in root.CurrentlyWatching)
             {

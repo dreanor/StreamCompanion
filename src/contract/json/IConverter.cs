@@ -1,6 +1,4 @@
-﻿using StreamCompanion.Contract.Json.Deserialize;
-using StreamCompanion.Contract.Json.Serialize;
-using StreamCompanion.Contract.StreamTemplate;
+﻿using StreamCompanion.Contract.StreamTemplate;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +6,7 @@ namespace StreamCompanion.Contract.Json
 {
     public interface IConverter
     {
-        ISerializedRoot Convert(
+        IConverterRoot Convert(
             Guid id,
             IEnumerable<ISerie> currentlyWatching,
             IEnumerable<ISerie> completed,
@@ -16,9 +14,9 @@ namespace StreamCompanion.Contract.Json
             IEnumerable<ISerie> dropped,
             IEnumerable<ISerie> planToWatch);
 
-        void Export(ISerializedRoot serializedRoot, string inputFileFullname);
+        void Export(IConverterRoot serializedRoot, string inputFileFullname);
 
-        IDeserializedRoot Import(string inputFileFullname);
+        IConverterRoot Import(string inputFileFullname);
 
         void ExportStreams(IModel model, string inputFileFullname);
         IModel ImportStreams(string inputFileFullname);

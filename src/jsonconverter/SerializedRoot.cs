@@ -1,11 +1,11 @@
 ﻿using StreamCompanion.Contract;
-using StreamCompanion.Contract.Json.Serialize;
+using StreamCompanion.Contract.Json;
 using System;
 using System.Collections.Generic;
 
 namespace StreamCompanion.JsonConverter
 {
-    public class SerializedRoot : ISerializedRoot
+    public class SerializedRoot : IConverterRoot
     {
         public SerializedRoot(Guid id, IEnumerable<ISerie> currentlyWatching, IEnumerable<ISerie> completed, IEnumerable<ISerie> onHold, IEnumerable<ISerie> dropped, IEnumerable<ISerie> planToWatch)
         {

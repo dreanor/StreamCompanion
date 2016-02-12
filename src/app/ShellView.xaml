@@ -19,6 +19,16 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Button" x:Key="ColorButton">
+                <Setter Property="Background" Value="#FFF7F7F7"/>
+                <Style.Triggers>
+                    <Trigger Property="Button.IsFocused" Value="true">
+                        <Setter Property="Background" Value="#CC119EDA"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
         </ResourceDictionary>
     </Window.Resources>
     <controls:MetroWindow.RightWindowCommands>
@@ -80,12 +90,45 @@
 
     <controls:MetroContentControl>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <TextBox Grid.Column="1"
+                     controls:TextBoxHelper.Watermark="Search..." 
+                     Margin="6"
+                     Width="200"
+                     HorizontalAlignment="Right"/>
+            <StackPanel Grid.RowSpan="2"
+                      Margin="6">
+                <Button Margin="0 6 0 6"
+                        Content="Lists"
+                        Style="{StaticResource ColorButton}">
+                </Button>
+                <Button Margin="0 0 0 6"
+                        Content="History"
+                        Style="{StaticResource ColorButton}"/>
+                <Button Margin="0 0 0 6"
+                        Content="Statistics"
+                        Style="{StaticResource ColorButton}"/>
+                <Rectangle Margin="0 0 0 6"
+                           Height="3"
+                           Stroke="#CC119EDA"
+                           Fill="#CC119EDA" />
+                <Button Margin="0 0 0 6"
+                        Content="Search"
+                        Style="{StaticResource ColorButton}"/>
+            </StackPanel>
+
             <TabControl Grid.Row="1"
-                        Padding="6"
+                        BorderThickness="2"
+                        BorderBrush="LightBlue"
+                        Grid.Column="1"
+                        Margin="6"
                         SelectedItem="{Binding Path=SelectedItem}"
                         ItemsSource="{Binding Path=Steps, Mode=OneWay}">
                 <TabControl.ItemTemplate>

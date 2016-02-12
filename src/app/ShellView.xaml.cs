@@ -17,7 +17,7 @@ namespace StreamCompanion.App
             InitializeComponent();
             this.DataContext = viewModel;
             this.Title = string.Format("{0} - {1}", this.Title, Application.ProductVersion);
-            CheckForNewVersion();
+            //CheckForNewVersion();
         }
 
         private async void CheckForNewVersion()

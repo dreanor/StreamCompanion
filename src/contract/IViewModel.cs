@@ -12,6 +12,8 @@ namespace StreamCompanion.Contract
 
         ActionCommand ForceReloadStreamCmd { get; }
 
+        ActionCommand ReloadAllCmd { get; }
+
         ActionCommand SetAsCurrentlyWatchingCmd { get; }
 
         ActionCommand SetAsCompletedCmd { get; }

@@ -51,6 +51,8 @@
                                                  Header="Edit Serie" />
                         <MenuItem Command="{Binding Path=ForceReloadStreamCmd}"
                                                  Header="Force Reload Stream" />
+                        <MenuItem Command="{Binding Path=ReloadAllCmd}"
+                                                 Header="Reloads all Streams" />
                         <MenuItem Command="{Binding Path=SetAsCurrentlyWatchingCmd}"
                                                  Header="Set as Currently Watching" />
                         <MenuItem Command="{Binding Path=SetAsCompletedCmd}"
@@ -113,7 +115,7 @@
                                 HorizontalAlignment="Center"/>
         </Grid>
 
-        <Controls:Flyout Header="Add/Edit Serie" Position="Bottom" IsOpen="{Binding Path=IsAddNewSerieVisible, UpdateSourceTrigger=PropertyChanged}" Margin="-6">
+        <Controls:Flyout Header="Add/Edit Serie" Position="Bottom" IsOpen="{Binding Path=IsAddNewSerieVisible, UpdateSourceTrigger=PropertyChanged}" Margin="-6" Visibility="Hidden">
             <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

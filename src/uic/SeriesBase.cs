@@ -35,6 +35,7 @@ namespace StreamCompanion.Uic
             this.CancelCmd = new ActionCommand(() => this.IsAddNewSerieVisible = false);
 
             this.ForceReloadStreamCmd = new ActionCommand(this.ForceReloadStream, () => this.SelectedItem != null);
+            this.ReloadAllCmd = new ActionCommand(this.ReloadAll);
             this.SetAsCompletedCmd = new ActionCommand(this.SetAsCompleted, () => this.SelectedItem != null && this.model != this.stepModel.Completed);
             this.SetAsCurrentlyWatchingCmd = new ActionCommand(this.SetAsCurrentlyWatching, () => this.SelectedItem != null && this.model != this.stepModel.CurrentlyWatching);
             this.SetAsDroppedCmd = new ActionCommand(this.SetAsDropped, () => this.SelectedItem != null && this.model != this.stepModel.Dropped);
@@ -54,6 +55,8 @@ namespace StreamCompanion.Uic
         public ActionCommand EditSerieCmd { get; private set; }
 
         public ActionCommand ForceReloadStreamCmd { get; private set; }
+
+        public ActionCommand ReloadAllCmd { get; private set; }
 
         public ActionCommand SetAsCurrentlyWatchingCmd { get; private set; }
 
@@ -201,6 +204,21 @@ namespace StreamCompanion.Uic
                 this.SaveLocally();
                 this.IsBusy = false;
             });  
+        }
+
+        private void ReloadAll()
+        {
+            Task.Factory.StartNew(() =>
+            {
+                this.IsBusy = true;
+
+                foreach (ISerie serie in Series)
+                {
+                    this.controller.GenerateNextEpisodeStream(serie);
+                }
+
+                this.IsBusy = false;
+            });
         }
 
         private bool ValidateNewSerie()

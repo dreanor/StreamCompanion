@@ -97,7 +97,7 @@ namespace StreamCompanion.Controller
             streams.Add(new StreamItem("http://www.watchcartoononline.com/{0}-season-{1}-episode-{2}", "-"));
             streams.Add(new StreamItem("http://kinox.to/Stream/{0}-1.html,s{1}e{2}", "_"));
             streams.Add(new StreamItem("http://watchseries.lt/episode/{0}_s{1}_e{2}.html", "_"));
-            streams.Add(new StreamItem("http://gogoanime.tv/{0}-episode-{2}", "-", "Anime", "English"));
+            streams.Add(new StreamItem("http://gogoanime.io/{0}-episode-{2}", "-", "Anime", "English"));
             streams.Add(new StreamItem("http://www.animestv.us/watch/{0}-episode-{2}", "-", "Anime", "English"));
             return new Model(streams);
         }

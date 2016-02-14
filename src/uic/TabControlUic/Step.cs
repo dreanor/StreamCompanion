@@ -2,7 +2,7 @@ using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Uic;
 using helper.utils.baseclasses;
 
-namespace StreamCompanion.Uic
+namespace StreamCompanion.Uic.TabControlUic
 {
     public class Step : NotifyPropertyChangedBase<ISerieStepUIC>, ISerieStepUIC
     {

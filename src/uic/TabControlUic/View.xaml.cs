@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
 
-namespace StreamCompanion.Uic
+namespace StreamCompanion.Uic.TabControlUic
 {
     public partial class View : IView
     {

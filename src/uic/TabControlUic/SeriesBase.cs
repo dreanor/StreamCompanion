@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 using helper.mvvm.commands;
 
-namespace StreamCompanion.Uic
+namespace StreamCompanion.Uic.TabControlUic
 {
     public class SeriesBase : ViewModelBase<IViewModel, IModel>, IViewModel
     {

@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,16 +68,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Step.cs" />
-    <Compile Include="ViewModel.cs" />
+    <Compile Include="HistoryUic.xaml.cs">
+      <DependentUpon>HistoryUic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabControlUic\ListTabUic.xaml.cs">
+      <DependentUpon>ListTabUic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabControlUic\Step.cs" />
+    <Compile Include="TabControlUic\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeriesBase.cs" />
-    <Compile Include="View.xaml.cs">
+    <Compile Include="TabControlUic\SeriesBase.cs" />
+    <Compile Include="TabControlUic\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View.xaml">
+    <Page Include="HistoryUic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabControlUic\ListTabUic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabControlUic\View.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

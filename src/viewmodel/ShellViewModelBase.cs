@@ -9,6 +9,7 @@ using helper.mvvm.baseclasses;
 using helper.mvvm.commands;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace StreamCompanion.ShellViewModel
 { 
@@ -95,7 +96,7 @@ namespace StreamCompanion.ShellViewModel
         {
             if (e.PropertyName == GetPropertyName(x => x.SelectedTabIndex) && SelectedTabIndex == 1)
             {
-                this.History = new ObservableCollection<IHistoryItem>(controller.LoadHistory());
+                this.History = new ObservableCollection<IHistoryItem>(controller.LoadHistory().OrderByDescending(x => x.LastModified));
             }
         }
 

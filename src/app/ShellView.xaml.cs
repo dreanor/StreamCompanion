@@ -2,10 +2,7 @@
 using MahApps.Metro.Controls.Dialogs;
 using Octokit;
 using StreamCompanion.Contract.ShellBase.Shell;
-using System.Deployment.Application;
 using System.Diagnostics;
-using System.Reflection;
-using System.Windows.Forms;
 using Application = System.Windows.Forms.Application;
 
 namespace StreamCompanion.App

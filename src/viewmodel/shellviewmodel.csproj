@@ -70,6 +70,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HistoryItem.cs" />
     <Compile Include="MainShellViewModel.cs" />
     <Compile Include="ShellViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

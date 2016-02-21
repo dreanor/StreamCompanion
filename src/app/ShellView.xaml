@@ -97,21 +97,25 @@
             </Grid.RowDefinitions>
             <TextBox controls:TextBoxHelper.Watermark="Search..." 
                      Margin="6"
-                     Width="200"
+                     Width="400"
                      HorizontalAlignment="Right"/>
-            <TabControl TabStripPlacement="Left"
-                        Grid.Row="1">
-                <TabControl.Items>
-                    <TabItem Header="Lists">
-                        <uics:ListTabUic/>
-                    </TabItem>
-                    <TabItem Header="History">
-                        <uics:HistoryUic/>
-                    </TabItem>
-                    <TabItem Header="Statistics"/>
-                    <TabItem Header="Search"/>
-                </TabControl.Items>
-            </TabControl>
+            <Grid Grid.Row="1"
+                  Background="WhiteSmoke">
+                <TabControl TabStripPlacement="Left"
+                            Background="White"
+                            SelectedIndex="{Binding Path=SelectedTabIndex, UpdateSourceTrigger=PropertyChanged}">
+                    <TabControl.Items>
+                        <TabItem Header="Lists">
+                            <uics:ListTabUic/>
+                        </TabItem>
+                        <TabItem Header="History">
+                            <uics:HistoryUic/>
+                        </TabItem>
+                        <TabItem Header="Statistics"/>
+                        <TabItem Header="Search"/>
+                    </TabControl.Items>
+                </TabControl>
+            </Grid>
         </Grid>
     </controls:MetroContentControl>
 </controls:MetroWindow>

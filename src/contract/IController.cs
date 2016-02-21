@@ -12,5 +12,9 @@ namespace StreamCompanion.Contract
         void SaveStreamTemplates(IModel model);
 
         IEnumerable<IStreamItem> LoadStreamTemplates();
+
+        List<IHistoryItem> LoadHistory();
+
+        void SaveHistory(IHistoryItem history);
     }
 }

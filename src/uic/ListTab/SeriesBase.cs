@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 using helper.mvvm.commands;
+using StreamCompanion.ShellViewModel;
 
 namespace StreamCompanion.Uic.TabControlUic
 {
@@ -217,6 +218,7 @@ namespace StreamCompanion.Uic.TabControlUic
                     this.controller.GenerateNextEpisodeStream(serie);
                 }
 
+                this.SaveLocally();
                 this.IsBusy = false;
             });
         }
@@ -323,6 +325,7 @@ namespace StreamCompanion.Uic.TabControlUic
                         }
                     }
 
+                    this.controller.SaveHistory(new HistoryItem("Episode " + this.SelectedItem.Progress.CurrentEpisode, DateTime.Now.ToString(), this.SelectedItem.Title));
                     this.SaveLocally();
                     this.IsBusy = false;
                 });  

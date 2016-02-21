@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IController.cs" />
+    <Compile Include="IHistoryItem.cs" />
     <Compile Include="ISerieStepUIC.cs" />
     <Compile Include="IStreamManager.cs" />
     <Compile Include="Json\IConverter.cs" />

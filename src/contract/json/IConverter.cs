@@ -20,5 +20,8 @@ namespace StreamCompanion.Contract.Json
 
         void ExportStreams(IModel model, string inputFileFullname);
         IModel ImportStreams(string inputFileFullname);
+
+        void SaveHistory(IHistoryItem history, string inputFileFullname);
+        List<IHistoryItem> LoadHistory(string inputFileFullname);
     }
 }

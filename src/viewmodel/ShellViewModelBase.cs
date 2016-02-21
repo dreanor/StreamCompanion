@@ -7,6 +7,8 @@ using StreamCompanion.Contract.ShellBase.Uic.Step;
 using StreamCompanion.StreamTemplate;
 using helper.mvvm.baseclasses;
 using helper.mvvm.commands;
+using System.Collections.Generic;
+using System;
 
 namespace StreamCompanion.ShellViewModel
 { 
@@ -15,15 +17,12 @@ namespace StreamCompanion.ShellViewModel
         private readonly IController controller;
         private StreamTemplateView tempStreamTemplateView;
 
-        public ShellViewModelBase()
-        {
-        }
-
         protected ShellViewModelBase(IController controller, params IStepUIC[] stepUics)
         {
             this.IsEnabled = true;
             this.controller = controller;
             this.Steps = new ObservableCollection<IStepUIC>(stepUics);
+            this.History = new ObservableCollection<IHistoryItem>(controller.LoadHistory());
             this.SelectedItem = this.Steps[0];
 
             this.OpenInBrowserCmd = new ActionCommand(() => Process.Start("https://dreanor.github.io/StreamCompanion/"));
@@ -33,6 +32,7 @@ namespace StreamCompanion.ShellViewModel
             this.OpenHelpCmd = new ActionCommand(() => { this.AreOptionsVisible = false; this.IsHelpVisible = true; });
             this.HelpCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki"));
             this.ShowChangelogCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki/Changelog"));
+            this.PropertyChanged += OnPropertyChanged;
         }
 
         public ObservableCollection<IStepUIC> Steps
@@ -41,10 +41,22 @@ namespace StreamCompanion.ShellViewModel
             internal set { this.Set(x => x.Steps, value); }
         }
 
+        public ObservableCollection<IHistoryItem> History
+        {
+            get { return this.Get(x => x.History); }
+            internal set { this.Set(x => x.History, value); }
+        }
+
         public IStepUIC SelectedItem
         {
             get { return this.Get(x => x.SelectedItem); }
             set { this.Set(x => x.SelectedItem, value); }
+        }
+
+        public int SelectedTabIndex
+        {
+            get { return this.Get(x => x.SelectedTabIndex); }
+            set { this.Set(x => x.SelectedTabIndex, value); }
         }
 
         public ActionCommand OpenInBrowserCmd { get; private set; }
@@ -77,6 +89,14 @@ namespace StreamCompanion.ShellViewModel
         {
             get { return this.Get(x => x.IsEnabled); }
             private set { this.Set(x => x.IsEnabled, value); }
+        }
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == GetPropertyName(x => x.SelectedTabIndex) && SelectedTabIndex == 1)
+            {
+                this.History = new ObservableCollection<IHistoryItem>(controller.LoadHistory());
+            }
         }
 
         private void EditStreamTemplates()

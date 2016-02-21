@@ -74,6 +74,10 @@
       <Project>{7969ad33-e79e-4eae-8050-562720283cb2}</Project>
       <Name>StreamTemplate</Name>
     </ProjectReference>
+    <ProjectReference Include="..\viewmodel\ShellViewModel.csproj">
+      <Project>{e75f2bef-f5dd-4a54-9930-2af27c913540}</Project>
+      <Name>ShellViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,6 +24,7 @@ namespace StreamCompanion.Controller
         private string folderPath;
         private string rootPath;
         private string dataPath;
+        private string historyPath;
         private Guid userId;
 
         public MainController(IStepModel stepModel)
@@ -35,6 +36,7 @@ namespace StreamCompanion.Controller
             this.folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings");
             this.dataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\data.json");
             this.streamTemplatePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\streams.json");;
+            this.historyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\history.json"); ;
             this.semaphoreSlim = new SemaphoreSlim(1);
 
             this.TryLoadSettings();
@@ -73,6 +75,16 @@ namespace StreamCompanion.Controller
                 SaveStreamTemplates(tmpModel);
                 return tmpModel.Streams;
             }
+        }
+
+        public void SaveHistory(IHistoryItem history)
+        {
+            this.converter.SaveHistory(history, this.historyPath);
+        }
+
+        public List<IHistoryItem> LoadHistory()
+        {
+            return this.converter.LoadHistory(this.historyPath);
         }
 
         private void TryLoadSettings()

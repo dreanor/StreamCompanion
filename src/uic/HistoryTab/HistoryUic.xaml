@@ -19,14 +19,15 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    
-    <Grid>
-        <DataGrid>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Title"/>
-                <DataGridTextColumn Header="Details"/>
-                <DataGridTextColumn Header="Last Modified"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+
+    <DataGrid ItemsSource="{Binding Path=History, Mode=OneWay}"
+              AutoGenerateColumns="False"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Title" Binding="{Binding Path=Title, Mode=OneWay}"/>
+            <DataGridTextColumn Header="Details" Binding="{Binding Path=Details, Mode=OneWay}"/>
+            <DataGridTextColumn Header="Last Modified" Binding="{Binding Path=LastModified, Mode=OneWay}"/>
+        </DataGrid.Columns>
+    </DataGrid>
 </UserControl>

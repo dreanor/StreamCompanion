@@ -9,6 +9,10 @@ namespace StreamCompanion.Contract.ShellBase.Shell
     {
         ObservableCollection<IStepUIC> Steps { get; }
 
+        ObservableCollection<IHistoryItem> History { get; }
+
+        int SelectedTabIndex { get; set; }
+
         IStepUIC SelectedItem { get; set; }
 
         ActionCommand OpenInBrowserCmd { get; }

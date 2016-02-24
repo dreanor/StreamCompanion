@@ -81,6 +81,9 @@
     <Compile Include="ListTab\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatisticTab\StatisticUic.xaml.cs">
+      <DependentUpon>StatisticUic.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="HistoryTab\HistoryUic.xaml">
@@ -94,6 +97,10 @@
     <Page Include="ListTab\View.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatisticTab\StatisticUic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -20,16 +20,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style TargetType="Button" x:Key="ColorButton">
-                <Setter Property="Background" Value="#FFF7F7F7"/>
-                <Style.Triggers>
-                    <Trigger Property="Button.IsFocused" Value="true">
-                        <Setter Property="Background" Value="#CC119EDA"/>
-                        <Setter Property="BorderThickness" Value="2"/>
-                        <Setter Property="BorderBrush" Value="Black"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
         </ResourceDictionary>
     </Window.Resources>
     <controls:MetroWindow.RightWindowCommands>
@@ -99,20 +89,29 @@
                      Margin="6"
                      Width="400"
                      HorizontalAlignment="Right"/>
-            <Grid Grid.Row="1"
-                  Background="WhiteSmoke">
+            <Grid Grid.Row="1">
                 <TabControl TabStripPlacement="Left"
                             Background="White"
                             SelectedIndex="{Binding Path=SelectedTabIndex, UpdateSourceTrigger=PropertyChanged}">
                     <TabControl.Items>
                         <TabItem Header="Lists">
-                            <uics:ListTabUic/>
+                            <GroupBox Header="">
+                                <uics:ListTabUic/>
+                            </GroupBox>
                         </TabItem>
                         <TabItem Header="History">
-                            <uics:HistoryUic/>
+                            <GroupBox Header="">
+                                <uics:HistoryUic/>
+                            </GroupBox>
                         </TabItem>
-                        <TabItem Header="Statistics"/>
-                        <TabItem Header="Search"/>
+                        <TabItem Header="Statistics">
+                            <uics:StatisticUic/>
+                        </TabItem>
+                        <TabItem Header="Search">
+                            <GroupBox Header="">
+                                
+                            </GroupBox>
+                        </TabItem>
                     </TabControl.Items>
                 </TabControl>
             </Grid>

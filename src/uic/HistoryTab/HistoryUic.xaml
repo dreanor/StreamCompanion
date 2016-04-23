@@ -19,15 +19,18 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-
-    <DataGrid ItemsSource="{Binding Path=History, Mode=OneWay}"
-              AutoGenerateColumns="False"
-              CanUserAddRows="False"
-              CanUserDeleteRows="False">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Title" Binding="{Binding Path=Title, Mode=OneWay}"/>
-            <DataGridTextColumn Header="Details" Binding="{Binding Path=Details, Mode=OneWay}"/>
-            <DataGridTextColumn Header="Last Modified" Binding="{Binding Path=LastModified, Mode=OneWay}"/>
-        </DataGrid.Columns>
-    </DataGrid>
+    <StackPanel>
+        <GroupBox Header="History">
+            <DataGrid ItemsSource="{Binding Path=History, Mode=OneWay}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Path=Title, Mode=OneWay}"/>
+                    <DataGridTextColumn Header="Details" Binding="{Binding Path=Details, Mode=OneWay}"/>
+                    <DataGridTextColumn Header="Last Modified" Binding="{Binding Path=LastModified, Mode=OneWay}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </StackPanel>
 </UserControl>

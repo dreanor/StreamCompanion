@@ -95,21 +95,18 @@
                             SelectedIndex="{Binding Path=SelectedTabIndex, UpdateSourceTrigger=PropertyChanged}">
                     <TabControl.Items>
                         <TabItem Header="Lists">
-                            <GroupBox Header="">
+                            <GroupBox Header="Lists">
                                 <uics:ListTabUic/>
                             </GroupBox>
                         </TabItem>
                         <TabItem Header="History">
-                            <GroupBox Header="">
-                                <uics:HistoryUic/>
-                            </GroupBox>
+                            <uics:HistoryUic/>
                         </TabItem>
                         <TabItem Header="Statistics">
                             <uics:StatisticUic/>
                         </TabItem>
                         <TabItem Header="Search">
                             <GroupBox Header="">
-                                
                             </GroupBox>
                         </TabItem>
                     </TabControl.Items>

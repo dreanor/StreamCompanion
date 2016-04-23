@@ -11,6 +11,8 @@ namespace StreamCompanion.Contract.ShellBase.Shell
 
         ObservableCollection<IHistoryItem> History { get; }
 
+        IStatistic Statistic { get; }
+
         int SelectedTabIndex { get; set; }
 
         IStepUIC SelectedItem { get; set; }

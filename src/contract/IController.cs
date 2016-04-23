@@ -16,5 +16,7 @@ namespace StreamCompanion.Contract
         List<IHistoryItem> LoadHistory();
 
         void SaveHistory(IHistoryItem history);
+
+        IStatistic LoadStatistic();
     }
 }

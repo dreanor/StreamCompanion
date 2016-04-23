@@ -7,7 +7,7 @@ namespace StreamCompanion.ItemViewModel
 {
     public class Serie : ViewModelBase<ISerie>, ISerie
     {
-        public Serie(int number, string title, Progress progress, int rating, string type, string comment, string stream)
+        public Serie(int number, string title, Progress progress, double rating, string type, string comment, string stream)
         {
             this.Number = number;
             this.Title = title;
@@ -38,7 +38,7 @@ namespace StreamCompanion.ItemViewModel
             set { this.Set(x => x.Progress, value); }
         }
 
-        public int Rating
+        public double Rating
         {
             get { return this.Get(x => x.Rating); }
             set { this.Set(x => x.Rating, value); }

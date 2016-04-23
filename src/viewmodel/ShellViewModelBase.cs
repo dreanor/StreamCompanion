@@ -24,6 +24,7 @@ namespace StreamCompanion.ShellViewModel
             this.controller = controller;
             this.Steps = new ObservableCollection<IStepUIC>(stepUics);
             this.History = new ObservableCollection<IHistoryItem>(controller.LoadHistory());
+            this.Statistic = controller.LoadStatistic();
             this.SelectedItem = this.Steps[0];
 
             this.OpenInBrowserCmd = new ActionCommand(() => Process.Start("https://dreanor.github.io/StreamCompanion/"));
@@ -34,6 +35,12 @@ namespace StreamCompanion.ShellViewModel
             this.HelpCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki"));
             this.ShowChangelogCmd = new ActionCommand(() => Process.Start("https://github.com/dreanor/StreamCompanion/wiki/Changelog"));
             this.PropertyChanged += OnPropertyChanged;
+        }
+
+        public IStatistic Statistic
+        {
+            get { return this.Get(x => x.Statistic); }
+            internal set { this.Set(x => x.Statistic, value); }
         }
 
         public ObservableCollection<IStepUIC> Steps

@@ -60,6 +60,10 @@
       <Project>{458d67f5-7079-45fd-9ffc-6c7b543e4235}</Project>
       <Name>Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\itemviewmodel\ItemViewModel.csproj">
+      <Project>{c75292a9-1a3e-4d96-a431-bef6c00515b7}</Project>
+      <Name>ItemViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\jsonconverter\JsonConverter.csproj">
       <Project>{c01bd5cb-b16b-44fd-b859-b95b5b241652}</Project>
       <Name>JsonConverter</Name>

@@ -12,7 +12,7 @@ namespace StreamCompanion.Contract
 
         IProgress Progress { get; set; }
 
-        int Rating { get; set; }
+        double Rating { get; set; }
 
         [JsonIgnore]
         ObservableCollection<string> Types { get; }

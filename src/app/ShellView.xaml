@@ -7,7 +7,7 @@
                       IsEnabled="{Binding Path=IsEnabled, UpdateSourceTrigger=PropertyChanged}"
                       WindowStartupLocation="CenterScreen"
                       EnableDWMDropShadow="True"
-                      Width="1200"
+                      Width="1280"
                       Height="600"
                       Title="Stream Companion">
     <Window.Resources>
@@ -88,7 +88,8 @@
             <TextBox controls:TextBoxHelper.Watermark="Search..." 
                      Margin="6"
                      Width="400"
-                     HorizontalAlignment="Right"/>
+                     HorizontalAlignment="Right"
+                     IsEnabled="False"/>
             <Grid Grid.Row="1">
                 <TabControl TabStripPlacement="Left"
                             Background="White"
@@ -105,7 +106,7 @@
                         <TabItem Header="Statistics">
                             <uics:StatisticUic/>
                         </TabItem>
-                        <TabItem Header="Search">
+                        <TabItem Header="Search" IsEnabled="False">
                             <GroupBox Header="">
                             </GroupBox>
                         </TabItem>

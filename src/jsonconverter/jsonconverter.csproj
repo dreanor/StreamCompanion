@@ -43,7 +43,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Helper\helper.mvvm.dll</HintPath>
     </Reference>
-    <Reference Include="helper.utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="helper.utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Helper\helper.utils.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\lib\JsonNet40\Newtonsoft.Json.dll</HintPath>
     </Reference>

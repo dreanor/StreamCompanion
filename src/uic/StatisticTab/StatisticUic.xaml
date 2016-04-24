@@ -6,44 +6,54 @@
              xmlns:local="clr-namespace:StreamCompanion.Uic"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="300">
-    <StackPanel>
-        <GroupBox Header="List">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="0"
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer>
+
+            </ScrollViewer>
+            <GroupBox Header="List">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
                        Content="Serie count"/>
-                <Label Grid.Row="1"
+                    <Label Grid.Row="1"
                        Content="Episode count"/>
-                <Label Grid.Row="2"
+                    <Label Grid.Row="2"
                        Content="Mean score"/>
-                <Label Grid.Row="0"
+                    <Label Grid.Row="0"
                        Grid.Column="1"
                        Content="{Binding Path=Statistic.SerieCount}"/>
-                <Label Grid.Row="1"
+                    <Label Grid.Row="1"
                        Grid.Column="1"
                        Content="{Binding Path=Statistic.EpisodeCount}"/>
-                <Label Grid.Row="2"
+                    <Label Grid.Row="2"
                        Grid.Column="1"
                        Content="{Binding Path=Statistic.MeanScore}"/>
-            </Grid>
-        </GroupBox>
-        <GroupBox Header="Score distribution">
-            <Grid>
-                <DataGrid ItemsSource="{Binding Path=Statistic.ScoreDistribution}" AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Rating" Binding="{Binding Key}" />
-                        <DataGridTextColumn Header="Series" Binding="{Binding Value}" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </GroupBox>
-    </StackPanel>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Score distribution"
+                  Grid.Row="1">
+                <Grid>
+                    <DataGrid ItemsSource="{Binding Path=Statistic.ScoreDistribution}" AutoGenerateColumns="False" IsReadOnly="True" ScrollViewer.CanContentScroll="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Rating" Binding="{Binding Key}" />
+                            <DataGridTextColumn Header="Series" Binding="{Binding Value}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

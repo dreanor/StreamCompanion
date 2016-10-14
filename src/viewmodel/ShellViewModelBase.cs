@@ -103,7 +103,8 @@ namespace StreamCompanion.ShellViewModel
         {
             if (e.PropertyName == GetPropertyName(x => x.SelectedTabIndex) && SelectedTabIndex == 1)
             {
-                this.History = new ObservableCollection<IHistoryItem>(controller.LoadHistory().OrderByDescending(x => x.LastModified));
+                var orderedList = controller.LoadHistory().OrderByDescending(x => x.LastModified.TimeOfDay);
+                this.History = new ObservableCollection<IHistoryItem>(orderedList);
             }
         }
 

@@ -325,7 +325,7 @@ namespace StreamCompanion.Uic.TabControlUic
                         }
                     }
 
-                    this.controller.SaveHistory(new HistoryItem("Episode " + this.SelectedItem.Progress.CurrentEpisode, DateTime.Now.ToString(), this.SelectedItem.Title));
+                    this.controller.SaveHistory(new HistoryItem("Episode " + this.SelectedItem.Progress.CurrentEpisode, DateTime.Now, this.SelectedItem.Title));
                     this.SaveLocally();
                     this.IsBusy = false;
                 });  

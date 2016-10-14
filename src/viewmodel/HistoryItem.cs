@@ -5,7 +5,7 @@ namespace StreamCompanion.ShellViewModel
 {
     public class HistoryItem : IHistoryItem
     {
-        public HistoryItem(string details, string lastModified, string title)
+        public HistoryItem(string details, DateTime lastModified, string title)
         {
             Details = details;
             LastModified = lastModified;
@@ -14,7 +14,7 @@ namespace StreamCompanion.ShellViewModel
 
         public string Details { get; private set; }
 
-        public string LastModified { get; private set; }
+        public DateTime LastModified { get; private set; }
 
         public string Title { get; private set; }
     }

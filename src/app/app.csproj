@@ -164,6 +164,10 @@
       <Project>{D459A62A-5390-40D5-A188-C524630B5145}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tests\Tests.csproj">
+      <Project>{b8ff582b-7cba-494a-b040-24d6e1cfaf7b}</Project>
+      <Name>Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\uic\Uic.csproj">
       <Project>{92d01ec1-f123-4ba5-b527-e97aebd55a87}</Project>
       <Name>Uic</Name>

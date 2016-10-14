@@ -8,6 +8,6 @@ namespace StreamCompanion.Contract
 
         string Details { get; }
 
-        string LastModified { get; }
+        DateTime LastModified { get; }
     }
 }

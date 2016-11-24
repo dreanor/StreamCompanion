@@ -9,8 +9,7 @@
              d:DesignHeight="300"
              d:DesignWidth="500">
     <Grid>
-        <TabControl Margin="6"
-                    SelectedItem="{Binding Path=SelectedItem}"
+        <TabControl SelectedItem="{Binding Path=SelectedItem}"
                     ItemsSource="{Binding Path=Steps, Mode=OneWay}">
             <TabControl.ItemTemplate>
                 <DataTemplate>

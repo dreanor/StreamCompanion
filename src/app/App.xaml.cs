@@ -32,7 +32,6 @@ namespace StreamCompanion.App
 
             IShellViewModel shellViewmodel = new MainShellViewModel(controller, currentlyWatching, completed, onHold, dropped, planToWatch);
             var shellView = new ShellView(shellViewmodel);
-            shellView.Topmost = true;
             shellView.Show();
         }
 

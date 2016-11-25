@@ -2,9 +2,9 @@
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.Contract.ShellBase.Shell;
 using StreamCompanion.Controller;
-using StreamCompanion.Uic.TabControlUic;
 using StreamCompanion.Model;
 using StreamCompanion.ShellViewModel;
+using StreamCompanion.Uic.TabControlUic;
 using System;
 using System.Reflection;
 using System.Resources;

@@ -1,6 +1,6 @@
+using helper.utils.baseclasses;
 using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Uic;
-using helper.utils.baseclasses;
 
 namespace StreamCompanion.Uic.TabControlUic
 {

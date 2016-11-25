@@ -1,15 +1,15 @@
-﻿using StreamCompanion.Contract;
+﻿using helper.mvvm.baseclasses;
+using helper.mvvm.commands;
+using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.ItemViewModel;
-using helper.mvvm.baseclasses;
+using StreamCompanion.ShellViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
-using helper.mvvm.commands;
-using StreamCompanion.ShellViewModel;
 
 namespace StreamCompanion.Uic.TabControlUic
 {

@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 
 namespace StreamCompanion.Tests.JsonConverter
 {

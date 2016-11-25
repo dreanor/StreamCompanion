@@ -1,18 +1,15 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
+﻿using helper.mvvm.baseclasses;
+using helper.mvvm.commands;
 using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Shell;
 using StreamCompanion.Contract.ShellBase.Uic.Step;
 using StreamCompanion.StreamTemplate;
-using helper.mvvm.baseclasses;
-using helper.mvvm.commands;
-using System.Collections.Generic;
-using System;
-using System.Linq;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
 
 namespace StreamCompanion.ShellViewModel
-{ 
+{
     public abstract class ShellViewModelBase : ViewModelBase<IShellViewModel>, IShellViewModel
     {
         private readonly IController controller;

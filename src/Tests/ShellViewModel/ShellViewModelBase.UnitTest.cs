@@ -1,14 +1,8 @@
 ﻿using NUnit.Framework;
 using Rhino.Mocks;
 using StreamCompanion.Contract;
-using StreamCompanion.Contract.ShellBase.Shell;
 using StreamCompanion.Contract.ShellBase.Uic.Step;
 using StreamCompanion.ShellViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StreamCompanion.Tests.ShellViewModel
 {

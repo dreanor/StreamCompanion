@@ -1,6 +1,4 @@
-﻿using helper.mvvm.commands;
-using helper.utils.extensions;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Rhino.Mocks;
 using StreamCompanion.Contract;
 using StreamCompanion.Contract.StreamTemplate;

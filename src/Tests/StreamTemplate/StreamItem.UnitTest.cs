@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using StreamCompanion.Contract.StreamTemplate;
 using StreamCompanion.StreamTemplate;
-using System.Collections.Generic;
 
 namespace StreamCompanion.Tests.StreamTemplate
 {

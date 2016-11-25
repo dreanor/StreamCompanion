@@ -1,14 +1,14 @@
-﻿using StreamCompanion.Contract;
+﻿using helper.mvvm.baseclasses;
+using StreamCompanion.Contract;
 using StreamCompanion.Contract.StreamTemplate;
-using helper.mvvm.baseclasses;
 using System.Collections.ObjectModel;
 using System.Linq;
 using IViewModel = StreamCompanion.Contract.StreamTemplate.IViewModel;
 
 namespace StreamCompanion.StreamTemplate
 {
-    using System;
     using helper.mvvm.commands;
+    using System;
 
     public class ViewModel : ViewModelBase<IViewModel>, IViewModel
     {

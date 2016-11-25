@@ -7,56 +7,51 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="300">
-    <ScrollViewer>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <ScrollViewer>
-
-            </ScrollViewer>
-            <GroupBox Header="List">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="List">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0"
                        Content="Serie count"/>
-                    <Label Grid.Row="1"
+                <Label Grid.Row="1"
                        Content="Episode count"/>
-                    <Label Grid.Row="2"
+                <Label Grid.Row="2"
                        Content="Mean score"/>
-                    <Label Grid.Row="0"
+                <Label Grid.Row="0"
                        Grid.Column="1"
                        Content="{Binding Path=Statistic.SerieCount}"/>
-                    <Label Grid.Row="1"
+                <Label Grid.Row="1"
                        Grid.Column="1"
                        Content="{Binding Path=Statistic.EpisodeCount}"/>
-                    <Label Grid.Row="2"
+                <Label Grid.Row="2"
                        Grid.Column="1"
                        Content="{Binding Path=Statistic.MeanScore}"/>
-                </Grid>
-            </GroupBox>
-            <GroupBox Header="Score distribution"
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Score distribution"
                   Grid.Row="1">
-                <Grid>
-                    <lvc:CartesianChart Series="{Binding Path=Statistic.ScoreDistribution}">
-                        <lvc:CartesianChart.AxisX>
-                            <lvc:Axis Title="Rated Series" Labels=" "/>
-                        </lvc:CartesianChart.AxisX>
-                        <lvc:CartesianChart.AxisY>
-                            <lvc:Axis Title="Score" Labels="{Binding Path=Statistic.ScoreRatings}"></lvc:Axis>
-                        </lvc:CartesianChart.AxisY>
-                    </lvc:CartesianChart>
-                </Grid>
-            </GroupBox>
-        </Grid>
-    </ScrollViewer>
+            <Grid>
+                <lvc:CartesianChart Series="{Binding Path=Statistic.ScoreDistribution}">
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Rated Series" Labels=" "/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Score" Labels="{Binding Path=Statistic.ScoreRatings}"></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                </lvc:CartesianChart>
+            </Grid>
+        </GroupBox>
+    </Grid>
 </UserControl>

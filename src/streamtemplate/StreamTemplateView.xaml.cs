@@ -1,5 +1,4 @@
 ﻿using StreamCompanion.Contract.StreamTemplate;
-using System.ComponentModel;
 
 namespace StreamCompanion.StreamTemplate
 {

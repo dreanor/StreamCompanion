@@ -1,7 +1,7 @@
-﻿using StreamCompanion.Contract;
-using helper.mvvm.baseclasses;
-using System.Collections.ObjectModel;
+﻿using helper.mvvm.baseclasses;
+using StreamCompanion.Contract;
 using System;
+using System.Collections.ObjectModel;
 
 namespace StreamCompanion.ItemViewModel
 {

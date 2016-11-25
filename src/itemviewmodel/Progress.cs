@@ -3,7 +3,7 @@ using StreamCompanion.Contract;
 
 namespace StreamCompanion.ItemViewModel
 {
-	public class Progress : ViewModelBase<IProgress>, IProgress
+    public class Progress : ViewModelBase<IProgress>, IProgress
 	{
 		public Progress(int currentEpisode, int lastEpisode, int? season)
 		{

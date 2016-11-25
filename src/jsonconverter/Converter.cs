@@ -1,15 +1,15 @@
-﻿using StreamCompanion.Contract;
+﻿using helper.filehelper;
+using Newtonsoft.Json;
+using StreamCompanion.Contract;
 using StreamCompanion.Contract.Json;
 using StreamCompanion.Contract.StreamTemplate;
+using StreamCompanion.ShellViewModel;
 using StreamCompanion.StreamTemplate;
-using helper.filehelper;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using StreamCompanion.ShellViewModel;
 
 namespace StreamCompanion.JsonConverter
 {

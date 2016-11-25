@@ -1,6 +1,6 @@
-﻿using StreamCompanion.Contract;
+﻿using helper.utils.baseclasses;
+using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Model;
-using helper.utils.baseclasses;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 

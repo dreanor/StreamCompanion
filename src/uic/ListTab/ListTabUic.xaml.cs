@@ -1,5 +1,4 @@
-﻿using StreamCompanion.Contract.ShellBase.Shell;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace StreamCompanion.Uic
 {

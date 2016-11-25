@@ -1,5 +1,5 @@
-﻿using StreamCompanion.Contract.ShellBase.Model;
-using helper.utils.baseclasses;
+﻿using helper.utils.baseclasses;
+using StreamCompanion.Contract.ShellBase.Model;
 
 namespace StreamCompanion.Model
 {

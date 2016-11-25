@@ -1,7 +1,7 @@
-﻿using StreamCompanion.Contract;
-using StreamCompanion.Contract.StreamTemplate;
-using helper.mvvm.baseclasses;
+﻿using helper.mvvm.baseclasses;
 using Newtonsoft.Json;
+using StreamCompanion.Contract;
+using StreamCompanion.Contract.StreamTemplate;
 
 namespace StreamCompanion.StreamTemplate
 {

@@ -102,9 +102,7 @@
                         <TabItem Header="Statistics">
                             <uics:StatisticUic/>
                         </TabItem>
-                        <TabItem Header="Search" IsEnabled="False">
-                            <GroupBox Header="">
-                            </GroupBox>
+                        <TabItem Header="Search">
                         </TabItem>
                     </TabControl.Items>
                     <TabControl.Resources>

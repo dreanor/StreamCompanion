@@ -103,9 +103,13 @@ namespace StreamCompanion.ShellViewModel
         {
             if (e.PropertyName == GetPropertyName(x => x.SelectedTabIndex) && SelectedTabIndex == 1)
             {
-                var orderedList = controller.LoadHistory();
-                orderedList.Sort((a, b) => b.LastModified.CompareTo(a.LastModified));
-                this.History = new ObservableCollection<IHistoryItem>(orderedList);
+                var history = controller.LoadHistory();
+                history.Sort((a, b) => b.LastModified.CompareTo(a.LastModified));
+                this.History = new ObservableCollection<IHistoryItem>(history);
+            }
+            if (e.PropertyName == GetPropertyName(x => x.SelectedTabIndex) && SelectedTabIndex == 2)
+            {
+                this.Statistic = controller.LoadStatistic();
             }
         }
 

@@ -1,4 +1,6 @@
-﻿using StreamCompanion.Contract;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using StreamCompanion.Contract;
 using StreamCompanion.Contract.Json;
 using StreamCompanion.Contract.ShellBase.Model;
 using StreamCompanion.Contract.StreamTemplate;
@@ -50,8 +52,11 @@ namespace StreamCompanion.Controller
         #region Public Methods
         public IStatistic LoadStatistic()
         {
-            return new Statistic(GetAllEpisodeCount(), GetEpisodeMeanScore(), GetScoreDistribution(), GetSerieCount());
+            var ratings = GetAllRatings();
+            ratings.Sort();
+            return new Statistic(GetAllEpisodeCount(), GetEpisodeMeanScore(), GetScoreDistribution(ratings), ratings.Select(item => Convert.ToString(item)).ToArray(), GetSerieCount());
         }
+
         public string GenerateNextEpisodeStream(ISerie serie)
         {
             return this.streamManager.GenerateNextEpisodeStream(serie, this.cachedStreams);
@@ -165,19 +170,38 @@ namespace StreamCompanion.Controller
         #endregion
 
         #region Statistic
-        private Dictionary<int, int> GetScoreDistribution()
+        private SeriesCollection GetScoreDistribution(List<double> ratings)
         {
-            Dictionary<int, int> distribution = new Dictionary<int, int>();
-
-            for (int i = 1; i < 11; i++)
+            ChartValues<int> chartValues = new ChartValues<int>();
+            foreach (var item in ratings)
             {
-                distribution.Add(i, GetRatingCount(i));
+                chartValues.Add(GetRatingCount(item));
             }
 
-            return distribution;
+            var seriesCollection = new SeriesCollection();
+            seriesCollection.Add(new RowSeries
+            {
+                Title = "Ratings",
+                Values = chartValues,
+                DataLabels = true,
+                LabelPoint = x => x.X.ToString()
+            });
+
+            return seriesCollection;
         }
 
-        private int GetRatingCount(int rating)
+        private List<double> GetAllRatings()
+        {
+            List<double> scores = new List<double>();
+            scores.AddRange(stepModel.Completed.Series.Select(x => x.Rating).ToList());
+            scores.AddRange(stepModel.CurrentlyWatching.Series.Select(x => x.Rating).ToList());
+            scores.AddRange(stepModel.Dropped.Series.Select(x => x.Rating).ToList());
+            scores.AddRange(stepModel.OnHold.Series.Select(x => x.Rating).ToList());
+            scores.AddRange(stepModel.PlanToWatch.Series.Select(x => x.Rating).ToList());
+            return scores.Distinct().ToList();
+        }
+
+        private int GetRatingCount(double rating)
         {
             return stepModel.Completed.Series.Where(x => x.Rating == rating).Count()
                  + stepModel.CurrentlyWatching.Series.Where(x => x.Rating == rating).Count()

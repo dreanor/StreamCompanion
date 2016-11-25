@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StreamCompanion.Uic"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="300">
     <ScrollViewer>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <ScrollViewer>
 
@@ -46,12 +47,14 @@
             <GroupBox Header="Score distribution"
                   Grid.Row="1">
                 <Grid>
-                    <DataGrid ItemsSource="{Binding Path=Statistic.ScoreDistribution}" AutoGenerateColumns="False" IsReadOnly="True" ScrollViewer.CanContentScroll="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Rating" Binding="{Binding Key}" />
-                            <DataGridTextColumn Header="Series" Binding="{Binding Value}" />
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <lvc:CartesianChart Series="{Binding Path=Statistic.ScoreDistribution}">
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Rated Series" Labels=" "/>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Score" Labels="{Binding Path=Statistic.ScoreRatings}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
                 </Grid>
             </GroupBox>
         </Grid>

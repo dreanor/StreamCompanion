@@ -36,10 +36,21 @@
   <ItemGroup>
     <Reference Include="helper.mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="helper.utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Livecharts, Version=0.8.0.0, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.8.0\lib\net40\Livecharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.8.0.0, Culture=neutral, PublicKeyToken=3b585c2a5f1a92c1, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.8.0\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

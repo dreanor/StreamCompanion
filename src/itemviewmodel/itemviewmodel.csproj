@@ -40,6 +40,10 @@
     <Reference Include="helper.utils">
       <HintPath>..\..\lib\Helper\helper.utils.dll</HintPath>
     </Reference>
+    <Reference Include="Livecharts, Version=0.8.0.0, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.8.0\lib\net40\Livecharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +64,9 @@
       <Project>{458d67f5-7079-45fd-9ffc-6c7b543e4235}</Project>
       <Name>Contract</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

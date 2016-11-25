@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using LiveCharts;
 
 namespace StreamCompanion.Contract
 {
@@ -10,6 +10,8 @@ namespace StreamCompanion.Contract
 
         double MeanScore { get; }
 
-        Dictionary<int, int> ScoreDistribution { get; }
+        SeriesCollection ScoreDistribution { get; }
+
+        string[] ScoreRatings { get; }
     }
 }

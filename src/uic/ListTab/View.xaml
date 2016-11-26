@@ -115,7 +115,7 @@
                                 HorizontalAlignment="Center"/>
         </Grid>
 
-        <Controls:Flyout Header="Add/Edit Serie" Position="Bottom" IsOpen="{Binding Path=IsAddNewSerieVisible, UpdateSourceTrigger=PropertyChanged}" Margin="-6" Visibility="Hidden">
+        <Controls:Flyout Header="Add/Edit Serie" Position="Bottom" IsOpen="{Binding Path=IsAddNewSerieVisible, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden">
             <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

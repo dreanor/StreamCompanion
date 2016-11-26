@@ -7,6 +7,18 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="BorderThickness" Value="0,1,0,0"/>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontWeight="Bold"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -45,10 +57,14 @@
             <Grid>
                 <lvc:CartesianChart Series="{Binding Path=Statistic.ScoreDistribution}">
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis Title="Rated Series" Labels=" "/>
+                        <lvc:Axis Title="Rated Series" 
+                                  Foreground="Black" 
+                                  Labels=" "/>
                     </lvc:CartesianChart.AxisX>
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis Title="Score" Labels="{Binding Path=Statistic.ScoreRatings}"></lvc:Axis>
+                        <lvc:Axis Title="Score" 
+                                  Foreground="Black" 
+                                  Labels="{Binding Path=Statistic.ScoreRatings}"></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                 </lvc:CartesianChart>
             </Grid>

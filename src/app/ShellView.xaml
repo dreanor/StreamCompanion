@@ -24,9 +24,6 @@
     </Window.Resources>
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <TextBox controls:TextBoxHelper.Watermark="Search..." 
-                    Width="400"
-                    HorizontalAlignment="Right"/>
             <Button Content="Options" 
                     ToolTip="Show Option menu"
                     Command="{Binding Path=OpenOptionsCmd}"/>
@@ -101,8 +98,6 @@
                         </TabItem>
                         <TabItem Header="Statistics">
                             <uics:StatisticUic/>
-                        </TabItem>
-                        <TabItem Header="Search">
                         </TabItem>
                     </TabControl.Items>
                     <TabControl.Resources>

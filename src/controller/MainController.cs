@@ -36,16 +36,16 @@ namespace StreamCompanion.Controller
         #region ctor
         public MainController(IStepModel stepModel)
         {
-            this.converter = new Converter();
-            this.streamManager = new StreamManager();
+            converter = new Converter();
+            streamManager = new StreamManager();
             this.stepModel = stepModel;
-            this.rootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion"); 
-            this.folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings");
-            this.dataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\data.json");
-            this.streamTemplatePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\streams.json");;
-            this.historyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\history.json"); ;
-            this.semaphoreSlim = new SemaphoreSlim(1);
-            this.TryLoadSettings();
+            rootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion"); 
+            folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings");
+            dataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\data.json");
+            streamTemplatePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\streams.json");;
+            historyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Stream Companion\settings\history.json"); ;
+            semaphoreSlim = new SemaphoreSlim(1);
+            TryLoadSettings();
         }
         #endregion
 
@@ -59,34 +59,34 @@ namespace StreamCompanion.Controller
 
         public string GenerateNextEpisodeStream(ISerie serie)
         {
-            return this.streamManager.GenerateNextEpisodeStream(serie, this.cachedStreams);
+            return streamManager.GenerateNextEpisodeStream(serie, cachedStreams);
         }
 
         public void SaveData()
         {
-            this.semaphoreSlim.Wait();
-            var root = this.converter.Convert(this.userId, this.stepModel.CurrentlyWatching.Series, this.stepModel.Completed.Series, this.stepModel.OnHold.Series, this.stepModel.Dropped.Series, this.stepModel.PlanToWatch.Series);
-            this.converter.Export(root, this.dataPath);
-            this.semaphoreSlim.Release();
+            semaphoreSlim.Wait();
+            var root = converter.Convert(userId, stepModel.CurrentlyWatching.Series, stepModel.Completed.Series, stepModel.OnHold.Series, stepModel.Dropped.Series, stepModel.PlanToWatch.Series);
+            converter.Export(root, dataPath);
+            semaphoreSlim.Release();
         }
         
         public void SaveStreamTemplates(IModel model)
         {
-            this.converter.ExportStreams(model, this.streamTemplatePath);
-            this.cachedStreams = model.Streams;
+            converter.ExportStreams(model, streamTemplatePath);
+            cachedStreams = model.Streams;
         }
 
         public IEnumerable<IStreamItem> LoadStreamTemplates()
         {
-            if (File.Exists(this.streamTemplatePath))
+            if (File.Exists(streamTemplatePath))
             {
-                var streams = this.converter.ImportStreams(this.streamTemplatePath).Streams;
-                this.cachedStreams = streams;
+                var streams = converter.ImportStreams(streamTemplatePath).Streams;
+                cachedStreams = streams;
                 return streams;
             }
             else
             {
-                IModel tmpModel = this.GetDefaultStreams();
+                IModel tmpModel = GetDefaultStreams();
                 SaveStreamTemplates(tmpModel);
                 return tmpModel.Streams;
             }
@@ -94,29 +94,29 @@ namespace StreamCompanion.Controller
 
         public void SaveHistory(IHistoryItem history)
         {
-            this.converter.SaveHistory(history, this.historyPath);
+            converter.SaveHistory(history, historyPath);
         }
 
         public List<IHistoryItem> LoadHistory()
         {
-            return this.converter.LoadHistory(this.historyPath);
+            return converter.LoadHistory(historyPath);
         }
         #endregion
 
         #region Data Loading
         private void TryLoadSettings()
         {
-            if (Directory.Exists(this.folderPath))
+            if (Directory.Exists(folderPath))
             {
-                this.LoadData();
-                this.LoadStreamTemplates();
+                LoadData();
+                LoadStreamTemplates();
             }
             else
             {
-                this.userId = Guid.NewGuid();
-                Directory.CreateDirectory(this.folderPath);
-                this.SaveData();
-                this.SaveStreamTemplates(this.GetDefaultStreams());
+                userId = Guid.NewGuid();
+                Directory.CreateDirectory(folderPath);
+                SaveData();
+                SaveStreamTemplates(GetDefaultStreams());
             }
         }
 
@@ -133,39 +133,39 @@ namespace StreamCompanion.Controller
 
         private void LoadData()
         {
-            var root = this.converter.Import(this.dataPath);
+            var root = converter.Import(dataPath);
 
-            new Task(() => this.LoadData(root)).Start();
+            new Task(() => LoadData(root)).Start();
         }
 
         private void LoadData(IConverterRoot root)
         {
             foreach (var serie in root.CurrentlyWatching)
             {
-                this.stepModel.CurrentlyWatching.Series.Add(serie);
+                stepModel.CurrentlyWatching.Series.Add(serie);
             }
 
             foreach (var serie in root.Completed)
             {
-                this.stepModel.Completed.Series.Add(serie);
+                stepModel.Completed.Series.Add(serie);
             }
 
             foreach (var serie in root.OnHold)
             {
-                this.stepModel.OnHold.Series.Add(serie);
+                stepModel.OnHold.Series.Add(serie);
             }
 
             foreach (var serie in root.Dropped)
             {
-                this.stepModel.Dropped.Series.Add(serie);
+                stepModel.Dropped.Series.Add(serie);
             }
 
             foreach (var serie in root.PlanToWatch)
             {
-                this.stepModel.PlanToWatch.Series.Add(serie);
+                stepModel.PlanToWatch.Series.Add(serie);
             }
 
-            this.userId = root.Id;
+            userId = root.Id;
         }
         #endregion
 

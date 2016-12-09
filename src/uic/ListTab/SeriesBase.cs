@@ -32,7 +32,7 @@ namespace StreamCompanion.Uic.TabControlUic
 
             this.AddSerieCmd = new ActionCommand(this.OpenAddNewSerie);
             this.EditSerieCmd = new ActionCommand(this.EditCurrentSerie, () => this.SelectedItem != null);
-            this.DoneCmd = new ActionCommand(this.AddNewSerie, this.ValidateNewSerie);
+            this.DoneCmd = new ActionCommand(this.AddNewSerie, ValidateNewSerie);
             this.CancelCmd = new ActionCommand(() => this.IsAddNewSerieVisible = false);
 
             this.ForceReloadStreamCmd = new ActionCommand(this.ForceReloadStream, () => this.SelectedItem != null);

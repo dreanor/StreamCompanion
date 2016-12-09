@@ -44,30 +44,30 @@ namespace StreamCompanion.JsonConverter
             var previousHistory = LoadHistory(inputFileFullname);
             previousHistory.Add(history);
 
-            using (var fileStream = File.Open(inputFileFullname, FileMode.Create))
-            using (var streamWriter = new StreamWriter(fileStream, Encoding.GetEncoding("Windows-1252")))
-            using (var jsonTextWriter = new JsonTextWriter(streamWriter))
+            using (var jsonTextWriter = new JsonTextWriter(new StreamWriter(File.Open(inputFileFullname, FileMode.Create), Encoding.GetEncoding("Windows-1252"))))
             {
                 jsonTextWriter.Formatting = Formatting.Indented;
 
-                var jsonSerializer = new JsonSerializer();
-                jsonSerializer.MissingMemberHandling = MissingMemberHandling.Ignore;
-                jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+                var jsonSerializer = new JsonSerializer()
+                {
+                    MissingMemberHandling = MissingMemberHandling.Ignore,
+                    NullValueHandling = NullValueHandling.Ignore
+                };
                 jsonSerializer.Serialize(jsonTextWriter, previousHistory);
             }
         }
 
         public void Export(IConverterRoot serializedRoot, string inputFileFullname)
         {
-            using (var fileStream = File.Open(inputFileFullname, FileMode.Create))
-            using (var streamWriter = new StreamWriter(fileStream, Encoding.GetEncoding("Windows-1252")))
-            using (var jsonTextWriter = new JsonTextWriter(streamWriter))
+            using (var jsonTextWriter = new JsonTextWriter(new StreamWriter(File.Open(inputFileFullname, FileMode.Create), Encoding.GetEncoding("Windows-1252"))))
             {
                 jsonTextWriter.Formatting = Formatting.Indented;
 
-                var jsonSerializer = new JsonSerializer();
-                jsonSerializer.MissingMemberHandling = MissingMemberHandling.Ignore;
-                jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+                var jsonSerializer = new JsonSerializer()
+                {
+                    MissingMemberHandling = MissingMemberHandling.Ignore,
+                    NullValueHandling = NullValueHandling.Ignore
+                };
                 jsonSerializer.Serialize(jsonTextWriter, serializedRoot);
             }
         }
@@ -82,15 +82,15 @@ namespace StreamCompanion.JsonConverter
 
         public void ExportStreams(IModel model, string inputFileFullname)
         {
-            using (var fileStream = File.Open(inputFileFullname, FileMode.Create))
-            using (var streamWriter = new StreamWriter(fileStream, Encoding.GetEncoding("Windows-1252")))
-            using (var jsonTextWriter = new JsonTextWriter(streamWriter))
+            using (var jsonTextWriter = new JsonTextWriter(new StreamWriter(File.Open(inputFileFullname, FileMode.Create), Encoding.GetEncoding("Windows-1252"))))
             {
                 jsonTextWriter.Formatting = Formatting.Indented;
 
-                var jsonSerializer = new JsonSerializer();
-                jsonSerializer.MissingMemberHandling = MissingMemberHandling.Ignore;
-                jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
+                var jsonSerializer = new JsonSerializer()
+                {
+                    MissingMemberHandling = MissingMemberHandling.Ignore,
+                    NullValueHandling = NullValueHandling.Ignore
+                };
                 jsonSerializer.Serialize(jsonTextWriter, model);
             }
         }

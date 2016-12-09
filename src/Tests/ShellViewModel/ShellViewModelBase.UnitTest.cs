@@ -3,6 +3,7 @@ using Rhino.Mocks;
 using StreamCompanion.Contract;
 using StreamCompanion.Contract.ShellBase.Uic.Step;
 using StreamCompanion.ShellViewModel;
+using System.Collections.Generic;
 
 namespace StreamCompanion.Tests.ShellViewModel
 {
@@ -18,6 +19,7 @@ namespace StreamCompanion.Tests.ShellViewModel
         {
             controller = MockRepository.GenerateMock<IController>();
             stepUICMock = MockRepository.GenerateMock<IStepUIC>();
+            controller.Stub(x => x.LoadHistory()).Return(new List<IHistoryItem>());
             shellViewModelSUT = new MainShellViewModel(controller, stepUICMock);
         }
 
